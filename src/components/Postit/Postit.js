@@ -1,6 +1,9 @@
 import "./Postit.css";
 
-const Postit = () => { 
+
+
+const Postit = ({ title, description, button }) => { 
+    
     const handleClick = () => {
         console.log('hola')
     }
@@ -9,15 +12,12 @@ const Postit = () => {
      return (
        
         <div className="postit__container">
-            <div className="postitTitle__container">
-            <div className="postit__title">Los mejores productos usados</div>
-        </div>
-        <div className="postitDescription__container">
-            <div className="postit__description">Compra productos usados y ahorra!!</div>
-            <div className="ButtonContainer">
-            <div className="MyButton" onClick={handleClick}>Compra Ya!</div>
-        </div>
-        </div>
+          
+            <div className="postit__title"><h1>{title}</h1></div>
+            <div className="postit__description">{description}</div>
+            <button className="MyButton" onClick={handleClick}><h1 className="realButton">{button}</h1></button>
+            
+            
         </div>
        
      );
