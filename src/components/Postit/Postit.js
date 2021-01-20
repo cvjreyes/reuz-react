@@ -3,7 +3,6 @@ import "./Postit.css";
 
 
 const Postit = ({ title, description, button }) => { 
-    
     const handleClick = () => {
         console.log('hola')
     }
@@ -24,5 +23,3 @@ const Postit = ({ title, description, button }) => {
      }
         
  export default Postit;
-
-
