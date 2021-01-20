@@ -1,0 +1,57 @@
+.postit__container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 30px;
+    width: 494px;
+    height: 553px;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(31px);
+    border: 3px solid red;
+}
+
+.postit__title h1 { 
+    
+    justify-content: left;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 60px;
+    color: #3A3A3A;
+    border: 3px solid red;
+    margin: 0px;
+    width: 374px;
+    height: 201px;
+}
+.postit__description {
+    margin-top: 70px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    color: #898989;
+}
+.MyButton {
+    
+    margin-top: 150px;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    background: #E89F71;
+    margin-top: 80px;
+    
+}
+.realButton {
+   
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 150%;
+    color: #FFFFFF;
+    
+}
