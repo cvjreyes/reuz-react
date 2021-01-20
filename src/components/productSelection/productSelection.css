@@ -1,0 +1,5 @@
+.productSelection_container {
+    columns: 8 285px;
+    column-gap: 32px;
+    margin: 0 32px;
+}
