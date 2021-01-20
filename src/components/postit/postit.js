@@ -1,4 +1,4 @@
-import "./Postit.css";
+import "./postit.css";
 
 
 
