@@ -1,4 +1,4 @@
-import ProductSelection from "../../components/ProductSelection/productSelection";
+import ProductSelection from "../../components/productSelection/productSelection";
 import Postit from "../../components/postit/postit";
 import Icon from "../../components/icon/icon";
 
