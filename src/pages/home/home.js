@@ -1,6 +1,7 @@
-import ProductSelection from "../../components/ProductSelection/productSelection";
+import ProductSelection from "../../components/productSelection/productSelection";
 import Postit from "../../components/postit/postit";
 import Icon from "../../components/icon/icon";
+import "./home.css";
 
 export const Home = () => {
     return (
@@ -14,7 +15,6 @@ export const Home = () => {
             title="Champions in variety" 
             description="Thousands of products" />
         <ProductSelection />
-
 
 </div>
     )
