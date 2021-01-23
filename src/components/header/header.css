@@ -1,40 +1,59 @@
 
     
 .userimagen{
-    position: relative;
-    left: 90.76%;
+    position: absolute;
+    left: 95.76%;
     right: 6.76%;
-    top: 13.36%;
-    bottom: 12.27%;
+    top: 8%;
+    bottom: 20.27%;
 
 }
  .vector {
-    position:relative;
-    left: 85.76%;
+    position:absolute;
+    left: 90.76%;
     right: 6.76%;
-    top: 13.36%;
+    top: 9.36%;
     bottom: 12.27%;
-    border: solid #262F56;
+   
  }
  .flecha {
+    width: 25px;
     position: relative;
     left: 30.76%;
     right: 6.76%;
-    top: 13.36%;
     bottom: 20.27%;
+    position: absolute;
+   left: 40.17%;
+   right: -8.33%;
+   top: 10.5%;
+   bottom: 4.17%;
+   transform: rotate(360deg);
     
  }
  .productos {
-    margin-top:auto;
-    left:50%;
 
-    
+  
     
  }
  .logito {
-    position: relative;
-    left: 0.76%;
+    position: absolute;
+    left: 5%;
     right: 6.76%;
-    top: 13.36%;
+    top: 3.36%;
     bottom: 100.27%;
+    width: 140px;
+ }
+ .carousel{
+   position: absolute;
+   width: 934px;
+   height: 553px;
+   left: 399px;
+   top: 211px;
+ }
+ .carousel2{
+   position: absolute;
+   width: 934px;
+   height: 553px;
+   left: -300px;
+   top: 211px;
  }
