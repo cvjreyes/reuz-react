@@ -1,0 +1,40 @@
+
+    
+.userimagen{
+    position: relative;
+    left: 90.76%;
+    right: 6.76%;
+    top: 13.36%;
+    bottom: 12.27%;
+
+}
+ .vector {
+    position:relative;
+    left: 85.76%;
+    right: 6.76%;
+    top: 13.36%;
+    bottom: 12.27%;
+    border: solid #262F56;
+ }
+ .flecha {
+    position: relative;
+    left: 30.76%;
+    right: 6.76%;
+    top: 13.36%;
+    bottom: 20.27%;
+    
+ }
+ .productos {
+    margin-top:auto;
+    left:50%;
+
+    
+    
+ }
+ .logito {
+    position: relative;
+    left: 0.76%;
+    right: 6.76%;
+    top: 13.36%;
+    bottom: 100.27%;
+ }
