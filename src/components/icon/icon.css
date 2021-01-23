@@ -5,11 +5,12 @@
     align-items: center;
     padding: 0px;
 
-    position: absolute;
+    position: relative;
     width: 1174px;
     height: 85px;
     left: 133px;
-    top: 810px;
+    top: 710px;
+    bottom: -20%;
 }
 .iconTitle__container{
     display: flex;
@@ -20,8 +21,8 @@
     position: absolute;
     width: 1174px;
     height: 85px;
-    left: 133px;
-    top: 810px;
+    left: 80px;
+    top: 610px;
 }
 .icon__icon{
 

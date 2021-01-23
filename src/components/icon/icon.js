@@ -1,6 +1,6 @@
 import "./icon.css";
 
-const Icon = ({urlImage, title, description}) => { 
+const Icon = ({urlImage, title, description, icon1}) => { 
     const handleClick = () => {
         console.log('hola')
     }
@@ -8,9 +8,9 @@ const Icon = ({urlImage, title, description}) => {
 
      return (
        
-        // <div className="icon__container">
+        // <div classN  ame="icon__container">
             <div className="iconTitle__container" onClick={handleClick}>
-                <img src={urlImage} className="icon__icon" />
+                <img src={urlImage} className="icon__icon" alt={icon1} />
                 <span className="icon__title">{title}</span>
                 <span className="icon__description">{description}</span>
                 
