@@ -54,7 +54,7 @@ const listOfProducts = [
 ];
 
 const ProductSelection = () => {
-
+    
     return (
         <div className="productSelection_container">
             {listOfProducts.map(product => (
@@ -63,8 +63,11 @@ const ProductSelection = () => {
                 name={product.name} 
                 description={product.description}
                 price={product.price} />
+                
+                
              ))}
         </div>
+        
     );
 };
 
