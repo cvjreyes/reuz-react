@@ -62,7 +62,7 @@ const listOfProducts = [
 ];
 
 const ProductSelection = () => {
-
+    
     return (
         
         <div className="productSelection_container">
@@ -75,6 +75,7 @@ const ProductSelection = () => {
                 lastPrice={product.lastPrice}/>
              ))}
         </div>
+        
     );
 };
 
