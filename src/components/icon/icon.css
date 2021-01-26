@@ -1,8 +1,10 @@
 .icons-container {
   display: flex;
   justify-content: space-around;
+  margin: auto;
   width: 100%;
   height: 200px;
+  max-width: 1300px;
 }
 
 .icons-container__section {
