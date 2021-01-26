@@ -45,6 +45,10 @@
   line-height: 30px;
 }
 
+.icons-container__section-icon {
+  margin-right: 5px;
+}
+
 .prices {
   display: flex;
 }
