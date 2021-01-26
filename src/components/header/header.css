@@ -1,60 +1,31 @@
 
     
-.userimagen{
-    position: absolute;
-    left: 95.76%;
-    right: 6.76%;
-    top: 8%;
-    bottom: 20.27%;
 
+ .carousel__images {
+    border: 3px solid green;
+    display: flex;
+
+ }
+
+
+.carousel img {
+  width: 100%;
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  border: 2px solid blue;
+  background-color: #FCF8F3;
 }
- .vector {
-    position:absolute;
-    left: 90.76%;
-    right: 6.76%;
-    top: 9.36%;
-    bottom: 12.27%;
-   
- }
- .flecha1 {
-    width: 25px;
-    position: relative;
-    left: 30.76%;
-    right: 6.76%;
-    bottom: 20.27%;
-    position: absolute;
-   left: 40.17%;
-   right: -8.33%;
-   top: 10.5%;
-   bottom: 4.17%;
-   transform: rotate(360deg);
-    
- }
- .productos {
-  width: 90px;
- }
- .logito {
-    position: absolute;
-    left: 5%;
-    right: 6.76%;
-    top: 3.36%;
-    bottom: 100.27%;
-    width: 140px;
- }
- .carousel{
-   position: absolute;
-   width: 934px;
-   height: 553px;
-   left: 399px;
-   top: 211px;
- }
- .carousel2{
-   position: absolute;
-   width: 934px;
-   height: 553px;
-   left: -300px;
-   top: 211px;
- }
+
+
+
+
+
+
+
+
+
+
  .pequeño_contenedor {
   position: absolute;
   width: 294px;

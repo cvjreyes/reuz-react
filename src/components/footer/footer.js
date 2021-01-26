@@ -10,15 +10,22 @@ const Footer = () => {
     }
 
 return (
-    <div className="footer__container">
-        <img className="logoreuz" src={logo} alt="name1"/>
-        <span className="derechosReuz">Reuz rights 2020</span>
-        <img className="twitter__container" src={socialLogo1} onClick={handleClick} alt="name2"/>
-        <img className="instagramLogo" src={socialLogo2} onClick={handleClick} alt="name3"/>
-        <img className="youtubeLogo" src={socialLogo3} onClick={handleClick} alt="name4"/>
-        <button className="MyButton1" onClick={handleClick}><h1 className="realButton1">Show more</h1></button>
-         
+    <div className="footer-container">
+        <img className="footer-container__logoreuz" src={logo} alt="name1"/>
+
+        <span className="footer-container__copyright">© 2020 Reuz All rights reserved</span>
+
+        <div className="social-icons"> 
+            <img className="twitter__container" src={socialLogo1} onClick={handleClick} alt="name2"/>
+            <img className="instagramLogo" src={socialLogo2} onClick={handleClick} alt="name3"/>
+            <img className="youtubeLogo" src={socialLogo3} alt="youtube logo"/> 
+        </div>
     </div>
 );
-}
+};
+
 export default Footer;
+
+{/*
+<button className="MyButton1" onClick={handleClick}><h1 className="realButton1">Show more</h1></button>
+*/}

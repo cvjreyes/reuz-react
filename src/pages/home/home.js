@@ -15,7 +15,7 @@ import Header from "../../components/header/header"
 export const Home = () => {
   return (
     <div>
-        {/* <Input placeholder="Search for anything!" className="buscador__container" /> */}
+
         <NavBar />
         <Header />
         <Postit 
