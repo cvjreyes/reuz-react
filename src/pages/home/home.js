@@ -15,7 +15,7 @@ export const Home = () => {
       <Postit
         title="The best second hand items"
         description="Our forniture is made from selected and best quality materials that are suitable for your dream home"
-        button="Compra ya!"
+        button="Buy now!"
       />
       <Icon />
       <ProductSelection />

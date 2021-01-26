@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
 .container1 {
-  border: 2px solid greenyellow;
   background-color: #f4f5f7;
+  width: 285px;
+  height: 446px;
   display: flex;
   flex-wrap: wrap;
-  margin: 10px 0px 0px 0px;
+  margin: 30px 30px 0px 0px;
 }
 
 .productCard_container-overlay {
@@ -18,17 +19,15 @@
 }
 
 .productCard_container {
-  margin: 0px 20px 0px 0px;
+  margin: 0px 30px 0px 0px;
   width: 285px;
   height: 446px;
-  border: 5px solid blue;
 }
 
 /*PRODUCT IMAGE*/
 .productCard_image__container {
   height: 285px;
   width: 285px;
-
   background-size: cover;
   background-position: center;
 }
@@ -38,7 +37,6 @@
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-
   width: 285px;
   font-family: "Raleway";
   font-style: normal;
@@ -50,17 +48,6 @@
 .prices {
   display: flex;
 }
-
-/*
-.productCard_container {
-position: absolute;
-height: 100%;
-width: 100%;
-top: 0;
-left: 0;
-background-color: #3a3a3a3d;
-}
-*/
 
 .productCard_title {
   font-style: normal;
