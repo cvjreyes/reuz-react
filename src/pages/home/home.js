@@ -1,3 +1,5 @@
+
+import NavBar from "../../components/navBar/navBar";
 import ProductSelection from "../../components/productSelection/productSelection";
 import Postit from "../../components/postit/postit";
 import Icon from "../../components/icon/icon";
@@ -14,6 +16,7 @@ export const Home = () => {
   return (
     <div>
         {/* <Input placeholder="Search for anything!" className="buscador__container" /> */}
+        <NavBar />
         <Header />
         <Postit 
         title="The best second hand items"
