@@ -1,52 +1,87 @@
-
 .navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    width: 100%;
-    height: 50px;
-    left: 0px;
-    top: 0px;
-    background: #FCF8F3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  padding: 25px;
+  background-color: #fcf8f3;
+  z-index: 1;
 }
 
-.navBarLeft {
-    display: flex;
-    flex-direction: flex-start;
-    margin: 15px;
-    border: 1px solid blue;
+.navBar__left {
+  display: flex;
+  flex-direction: flex-start;
+  margin-left: 30px;
 }
 
-.dropMenu {
-    width: 68px;
-    height: 24px;
-    border: 1px solid red;
-    margin-left: 20px;
-    margin-right: 20px;
-
+.logo {
+  width: 90.78px;
+  height: 37px;
+  margin-bottom: 5px;
 }
 
-.navBarRight {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border: 1px solid yellow;
-    margin: 15px; 
+.navBar__dropDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
 }
 
-
-.heartIcon {
-    display: flex;
-    border: 1px solid red;
+.dropDown__title {
+  margin: 0;
+  padding: 0;
 }
 
-.userAvatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: red;
-    
+.dropDown__arrow {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.navBar__searchBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.navBar__searchBox input {
+  border: none;
+}
+
+.searchBox_ellipse {
+  display: flex;
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  justify-content: center;
+  align-content: center;
+}
+
+.searchBox__input {
+  width: 450px;
+  height: 30px;
+}
+
+.navBar__right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 35px;
+}
+
+.right__heartIcon {
+  display: flex;
+}
+
+.right__userAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .navBar__dropDown {
+    margin-left: 15px;
+  }
 }

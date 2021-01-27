@@ -1,8 +1,8 @@
 .productSelection_container {
-    columns: 8 285px;
-    column-gap: 32px;
-    margin: 0 32px;
-    top: 80px;
-    bottom: 100%;
-    margin-top: 800px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1300px;
+    margin-top: 25px;
 }
