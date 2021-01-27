@@ -1,56 +1,56 @@
-.postit__container{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    padding: 30px;
-    width: 300px;
-    height: 400px;
-    background: rgba(255, 255, 255, 0.397);
-    backdrop-filter: blur(31px);
-    left: 92px;
-    top:141px;
+.postit__container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  margin-left: 90px;
+  padding: 30px;
+  padding-top: 50px;
+  width: 300px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.397);
+  backdrop-filter: blur(31px);
+  top: 100px;
 }
 
-.postit__title h1 { 
-
-    justify-content: left;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 45px;
-    color: #3A3A3A;
-    margin: -4.5px;
-    width: 300px;
-    height: 150px;
+.postit__title h1 {
+  justify-content: left;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  color: #3a3a3a;
+  margin: -4.5px;
+  width: 300px;
+  height: 150px;
 }
+
 .postit__description {
-    margin-top: 10px;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 150%;
-    color: #898989;
+  margin-top: 10px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #898989;
 }
+
 .MyButton {
-    
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    text-align: center;
-    background: #E89F71;
-    margin-top: 30px;
-    
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  background: #e89f71;
+  margin-top: 30px;
+  border: none;
 }
+
 .realButton {
-   
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 150%;
-    color: #FFFFFF;
-    
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 150%;
+  color: #ffffff;
 }
