@@ -62,8 +62,9 @@ const listOfProducts = [
 ];
 
 const ProductSelection = () => {
-
+    
     return (
+        
         <div className="productSelection_container">
             {listOfProducts.map(product => (
                 <ProductCard  
@@ -74,6 +75,7 @@ const ProductSelection = () => {
                 lastPrice={product.lastPrice}/>
              ))}
         </div>
+        
     );
 };
 

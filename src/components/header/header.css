@@ -1,0 +1,156 @@
+
+    
+.userimagen{
+    position: absolute;
+    left: 95.76%;
+    right: 6.76%;
+    top: 8%;
+    bottom: 20.27%;
+
+}
+ .vector {
+    position:absolute;
+    left: 90.76%;
+    right: 6.76%;
+    top: 9.36%;
+    bottom: 12.27%;
+   
+ }
+ .flecha1 {
+    width: 25px;
+    position: relative;
+    left: 30.76%;
+    right: 6.76%;
+    bottom: 20.27%;
+    position: absolute;
+   left: 40.17%;
+   right: -8.33%;
+   top: 10.5%;
+   bottom: 4.17%;
+   transform: rotate(360deg);
+    
+ }
+ .productos {
+  width: 90px;
+ }
+ .logito {
+    position: absolute;
+    left: 5%;
+    right: 6.76%;
+    top: 3.36%;
+    bottom: 100.27%;
+    width: 140px;
+ }
+ .carousel{
+   position: absolute;
+   width: 934px;
+   height: 553px;
+   left: 399px;
+   top: 211px;
+ }
+ .carousel2{
+   position: absolute;
+   width: 934px;
+   height: 553px;
+   left: -300px;
+   top: 211px;
+ }
+ .pequeño_contenedor {
+  position: absolute;
+  width: 294px;
+  height: 148px;
+  left: 999px;
+  top: 576px;
+  
+  background: rgb(209, 204, 204);
+  backdrop-filter: blur(31px);
+  
+  
+ }
+ .kangoo{
+  position: absolute;
+  width: 103px;
+  height: 34px;
+  left: 0px;
+  top: 20px;
+  
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 120%;
+  color: #0e0d0d;
+ }
+ .añocoche {
+  
+  width: 105px;
+  height: 90px;
+  left: 3%;
+  top: 60px;
+  
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+ }
+ 
+.flecha {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: 250px;
+  top: 120px;
+
+  background: rgba(247, 240, 240, 0);
+  backdrop-filter: blur(31px);
+}
+.caracteristicas{
+  position: absolute;
+  width: 105px;
+  height: 24px;
+  left: 0px;
+  top: 60px;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #616161;
+}
+.ellipse4 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 40px;
+  top: -430px;
+  border-radius:25px;
+  background: #E89F71;
+  opacity: 0.3;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.ellipse5 {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 100px;
+  top: -430px;
+  border-radius: 25px;
+  background: #E89F71;
+}
+.line1{
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 110px;
+  top: -420px;
+}
+.line2{
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  left: 50px;
+  top: -420px;
+}

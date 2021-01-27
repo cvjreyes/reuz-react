@@ -1,0 +1,125 @@
+.footer__container{
+    height: 72px;
+    width: 1440px;
+    left: 0px;
+    top: 2136px;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 340%;
+    bottom: 0%;
+  
+
+    background: #F9F1E6;
+
+}
+.logoreuz {
+    height: 29px;
+    width: 70px;
+    left: 7px;
+    top: -7px;
+    border-radius: 0px;
+    position: absolute;
+    left: 6.67%;
+    right: 26.67%;
+    top: 20.57%;
+    bottom: 0%;
+
+}
+.derechosReuz{
+    position: absolute;
+    width: 235px;
+    height: 24px;
+    left: 602px;
+    top: calc(50% - 24px/2);
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    /* identical to box height, or 24px */
+    font-feature-settings: 'liga' off;
+
+    /* Color / Gray 3 */
+    color: #898989;
+
+}
+.twitter__container {
+
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    top: 5px;
+    border-radius: 0px;
+    position: absolute;
+    left: 80.33%;
+    right: 23.33%;
+    top: 29.33%;
+    bottom: 23.33%;
+
+    /* #F2994A */
+    background: #fcf9f6;
+    
+}
+.instagramLogo{
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    top: 5px;
+    border-radius: 0px;
+    position: absolute;
+    left: 90.33%;
+    right: 23.33%;
+    top: 28.33%;
+    bottom: 23.41%;
+
+    /* #F2994A */
+    background: #faf8f7;
+    
+}
+.youtubeLogo{
+    height: 30px;
+    width: 30px;
+    left: 5px;
+    top: 5px;
+    border-radius: 0px;
+    position: absolute;
+    left: 85%;
+    right: 26.6%;
+    top: 30%;
+    bottom: 30%;
+
+    /* #F2994A */
+    background: #f8f5f2;
+    
+}
+.MyButton1 {
+    width: 245px;
+    height: 48px;
+    position: relative;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    background: #E89F71;
+    margin-top: -100%;
+    top:-100px;
+    left: 40%;
+    
+}
+.realButton1 {
+   
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 150%;
+    color: #160c0c;
+    position: relative;
+    top: -15px;
+    
+}

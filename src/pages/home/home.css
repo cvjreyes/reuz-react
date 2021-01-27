@@ -1,3 +1,16 @@
-.productCard_board:hover {
-    bottom: 1570px;
+
+.product__board {
+    margin-top: 70%;
+}
+
+.buscador__container {
+
+    position: absolute;
+    width: 505.14px;
+    height: 45px;
+    left: 619.11px;
+    top: 40px;
+
+    /* Color / White */
+    background: #FFFFFF;
 }
