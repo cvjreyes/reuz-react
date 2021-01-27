@@ -1,0 +1,8 @@
+.productSelection_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 1300px;
+    margin-top: 25px;
+}

@@ -1,0 +1,43 @@
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 100%;
+  height: 200px;
+  max-width: 1300px;
+}
+
+.icons-container__section {
+  display: flex;
+}
+
+.icons-container__section div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icons-container__section-text1 {
+  font-family: Raleway;
+  font-size: 18px;
+  color: #3a3a3a;
+}
+
+.icons-container__section-text2 {
+  font-family: Raleway;
+  font-style: normal;
+  font-size: 16px;
+  color: #898989;
+}
+
+@media screen and (max-width: 768px) {
+  .icons-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .icons-container__section {
+    margin: 12px;
+  }
+}
