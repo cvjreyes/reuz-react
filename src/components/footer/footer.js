@@ -38,8 +38,8 @@ const Footer = () => {
 
 export default Footer;
 
-{
+
   /*
 <button className="MyButton1" onClick={handleClick}><h1 className="realButton1">Show more</h1></button>
 */
-}
+
