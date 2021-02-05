@@ -1,4 +1,4 @@
-.carousel {
+carousel {
   display: flex;
   flex-direction: column;
 
@@ -60,7 +60,7 @@
   font-family: Raleway;
   font-style: normal;
   font-size: 16px;
-  color: #616161;
+  color: #696565;
 }
 .ellipse4 {
   width: 48px;
@@ -114,4 +114,14 @@
   font-family: Raleway;
   font-size: 16px;
   color: #616161;
+}
+.flecha {
+  position: absolute;
+  left: 75%;
+  right: 18.3%;
+  top: 75%;
+  bottom: 22.83%;
+  background: rgba(255, 255, 255, 0.6);
+  color:red;
+
 }

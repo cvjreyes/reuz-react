@@ -8,6 +8,7 @@
   padding: 25px;
   background-color: #fcf8f3;
   z-index: 1;
+  top: 0px;
 }
 
 .navBar__left {

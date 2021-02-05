@@ -1,50 +1,43 @@
 
 import { useState } from "react";
 import "./productCard.css";
+import vectorShare from "../../assets/hover/vectorShare.svg";
+import vectorLike from "../../assets/hover/vectorLike.svg";
+import ellipseNew from "../../assets/productCard/ellipseNew.svg";
 
-const ProductCard = ({ urlImage, name, description, startingPrice, lastPrice,  }) => {
+const ProductCard = ({ urlImage, name, description, price  }) => {
   const [isOver,setIsOver]=useState(false);
 
     return (
+      
       <div className="container1" onMouseEnter = {()=>{setIsOver(true)}} onMouseLeave = {()=>{setIsOver(false)}}> 
-       {isOver && <div className="productCard_container-overlay"></div>}
-        
+       <div className="productCard_image__container" style={{ backgroundImage:  `url(${urlImage})` }}></div>
+       <div> 
+            <img className="productCard_topRight__container" alt="New" src={ellipseNew}/><span className="topRight__text">New</span></div>
+       
+       
        <div className="productCard_container">
-          <div className="productCard_image__container" style={{ backgroundImage:  `url(${urlImage})` }}></div>
-
-          <div className="productCard_topRight__container"></div>       
-          <div className="productCard_info_container">
-            <span className="productCard_title">{name}</span>
-            <span className="productCard_description">{description}</span>
-            <div className="prices">
-              <span className="productCard_price">{startingPrice}</span> 
-              <span className="productCard_lastPrice">{lastPrice}</span>
-            </div>
-          </div>  
-        </div>
-
-    </div>
+                  
+            <div className="productCard_info_container">
+              <span className="productCard_title">{name}</span>
+              <span className="productCard_description">{description}</span>
+              <div className="prices">
+                <span className="productCard_price">{price}</span> 
+              </div>
+              </div>     
+        </div> 
+       {isOver && 
+       <div className="productCard_container-overlay"> 
+          <img className="vector__share" alt="Share" src={vectorShare}/>
+           <span className="vector__share__text">Share</span>
+          <img className="vector__like" alt="Like" src={vectorLike} />
+          <span className="vector__like__text">Like</span>        
+        </div>  
+         
+        }
+      </div>
 
     );
   };
   
   export default ProductCard;
-  
-  /*
-        <div className="product_board" onMouseEnter = {()=>{setIsOver(true)}} onMouseLeave = {()=>{setIsOver(false)}}> 
-       { isOver && <div className="product_board_overlay"></div>}
-        <div className="productCard_container">
-        <div className="productCard_image__container" style={{ backgroundImage:  `url(${urlImage})` }}></div>
-        <div className="productCard_info_container">
-          <span className="productCard_title">{name}</span>
-          <span className="productCard_description">{description}</span>
-          <span className="productCard_price">{startingPrice}</span> 
-          <span className="productCard_lastPrice">{lastPrice}</span>
-        </div>
-      </div>
-    </div>
-  
-  
-  
-  
-  */

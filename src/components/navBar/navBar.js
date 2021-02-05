@@ -4,15 +4,19 @@ import desplegable from "../../assets/navBar/Line.svg";
 import vector from "../../assets/navBar/Vector.svg";
 import Ellipse from "../../assets/navBar/ellipse.svg";
 import userAvatar from "../../assets/navBar/ellipse2.svg";
+import {useHistory} from "react-router-dom";
+
+
 
 const NavBar = () => {
+  const history = useHistory ()
   return (
     <div className="navBar">
       <div className="navBar__left">
-        <img className="logo" src={Logo} alt="Reuz logo" />
+        <img className="logo" src={Logo} alt="Reuz logo" onClick={()=> history.push("/") } />
 
         <div className="navBar__dropDown">
-          <span className="dropDown__title">Products</span>
+          <span className="dropDown__title" onClick={()=> history.push("/products")}>Products</span>
           <img
             className="dropDown__arrow"
             alt="Drop down arrow"

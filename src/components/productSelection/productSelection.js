@@ -22,8 +22,7 @@ const ProductSelection = () => {
                 urlImage={product.urlImage} 
                 name={product.name} 
                 description={product.description}
-                startingPrice={product.startingPrice} 
-                lastPrice={product.lastPrice}/>
+                price={product.price}/>
              ))}
         </div>
         

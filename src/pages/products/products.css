@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.navbar__container{
+font-family: Raleway;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: left;
+ margin-top: 30px;
+top: 30px;
+}
