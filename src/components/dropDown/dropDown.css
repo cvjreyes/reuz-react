@@ -1,0 +1,21 @@
+.productsDropdown__container{
+    width: 9px;
+    height: 9px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+  .productDropdown__dropdown{
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 17px;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+  .dropdown__item{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    margin-top: 10px;
+  }
