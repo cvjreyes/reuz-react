@@ -8,6 +8,7 @@
   padding: 25px;
   background-color: #fcf8f3;
   z-index: 1;
+  top: 0;
 }
 
 .navBar__left {
@@ -42,6 +43,8 @@
 .navBar__searchBox {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .navBar__searchBox input {
@@ -50,11 +53,15 @@
 
 .searchBox_ellipse {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 30px;
   width: 30px;
   background-color: white;
-  justify-content: center;
-  align-content: center;
+}
+
+.searchBox_ellipse img {
+  height: 15px;
 }
 
 .searchBox__input {

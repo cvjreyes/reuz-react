@@ -1,11 +1,23 @@
+* {
+  margin:0px;
+  padding:0px;
+}
+
+.footer-container__logoreuz {
+  width: 70px;
+}
+
 .footer-container {
   display: flex;
+
   justify-content: space-around;
+  margin-bottom: 0px;
+
   height: 72px;
   width: 100%;
-  left: 0;
-  bottom: 0;
+
   background-color: #f9f1e6;
+
 }
 
 .footer-container__copyright {
@@ -27,34 +39,3 @@
   margin-left: 20px;
 }
 
-/*
-.MyButton1 {
-    width: 245px;
-    height: 48px;
-    position: relative;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 150%;
-    text-align: center;
-    background: #E89F71;
-    margin-top: -100%;
-    top:-100px;
-    left: 40%;
-    
-}
-.realButton1 {
-   
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 150%;
-    color: #160c0c;
-    position: relative;
-    top: -15px;
-    
-}
-
-*/

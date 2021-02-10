@@ -1,19 +1,25 @@
 .showMore {
   display: flex;
   justify-content: center;
-  padding: 30px;
   font-family: Raleway;
-  font-size: 16px;
 }
 
 .showMore-button {
   display: flex;
   justify-content: center;
+  margin-top: 25px;
   margin-bottom: 30px;
   font-size: 10px;
-  color: #e89f71;
+
   border: 1px solid #e89f71;
   background-color: white;
   width: 245px;
   height: 48px;
 }
+
+.showMore-button h1 {
+  margin: auto;
+  color: #e89f71;
+  padding: 0;
+}
+

@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
 .container1 {
+  position: relative;
   background-color: #f4f5f7;
   width: 285px;
   height: 446px;
@@ -15,14 +16,93 @@
   width: 100%;
   top: 0;
   left: 0;
-  background-color: #3a3a3a3d;
+  background-color: #3a3a3a73;
+}
+.productCard_topRight__container {
+position: absolute;
+width: 48px;
+height: 48px;
+left: 213px;
+top: 24px;
+
+}
+
+.topRight__text {
+position: absolute;
+width: 48px;
+height: 48px;
+left: 213px;
+top: 36px;
+bottom: 241px;
+font-family: Raleway;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+letter-spacing: 0em;
+text-align: center;
+color: white;
+}
+.vector__share {
+    position: absolute;
+    left: 58px;
+    right: 209px;
+    top: 249px;
+    bottom: 117px;
+    
+}
+.vector__share__text {
+    position: absolute;
+    left: 87px;
+    right: 154px;
+    top: 249px;
+    bottom: 117px;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
+
+    
+
+}
+
+
+.vector__like {
+    position: absolute;
+    left: 180.62px;
+    right: 83.62px;
+    top: 250.21px;
+    bottom: 177.95px;
+    
+}
+
+.vector__like__text {
+    position: absolute;
+    left: 211px;
+    right: 42px;
+    top: 250.21px;
+    bottom: 177.95px;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: white;
 }
 
 .productCard_container {
   margin: 0px 30px 0px 0px;
   width: 285px;
-  height: 446px;
+  height: 170px;
 }
+
+
 
 /*PRODUCT IMAGE*/
 .productCard_image__container {

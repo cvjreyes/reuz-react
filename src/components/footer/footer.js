@@ -24,13 +24,19 @@ const Footer = () => {
           onClick={handleClick}
           alt="name2"
         />
+
         <img
           className="instagramLogo"
           src={socialLogo2}
           onClick={handleClick}
           alt="name3"
         />
-        <img className="youtubeLogo" src={socialLogo3} alt="youtube logo" />
+
+        <img 
+          className="youtubeLogo" 
+          src={socialLogo3} 
+          alt="youtube logo" 
+        />
       </div>
     </div>
   );
@@ -38,8 +44,4 @@ const Footer = () => {
 
 export default Footer;
 
-{
-  /*
-<button className="MyButton1" onClick={handleClick}><h1 className="realButton1">Show more</h1></button>
-*/
-}
+

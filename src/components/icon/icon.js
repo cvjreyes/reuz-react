@@ -16,6 +16,7 @@ const Icon = () => {
           className="icons-container__section-icon"
           src={icon1}
           alt={icon1}
+          onClick={handleClick}
         />
         <div>
           <span className="icons-container__section-text1">
