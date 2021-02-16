@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from "./pages/products/products";
 import Compra from "./pages/compra/compra";
 import LoginForm from "./pages/loginForm/loginForm";
+import ManagePage from "./pages/managePage/managePage";
 //import Header from "./components/header/header";
 //import Footer from "./components/footer/footer";
 //import NavBar from "./components/navBar/navBar";
@@ -23,6 +24,9 @@ function App() {
         </Route>
           <Route exact path="/products">
             <Products />
+            </Route>
+          <Route exact path="/managePage">
+            <ManagePage />
           </Route>
           <Route exact path="/compra">
             <Compra />

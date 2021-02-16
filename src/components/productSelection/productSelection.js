@@ -2,15 +2,9 @@ import { useEffect, useState } from "react";
 import ProductCard from "../productCard/productCard";
 import "./productSelection.css";
 
-
-
-
 const ProductSelection = () => {
     
     const [selcategory, setSelcategory] = useState([]);
-
-
-
     const handlerLoadSubcategories = function (e) {
         
         const category = e.target.value;
@@ -35,8 +29,6 @@ const ProductSelection = () => {
           .then((json) => setSubcategories(json));
       }, [selcategory]);
 
-
-
     const [products, setProducts] = useState([]);
     
     useEffect(() => {
@@ -46,20 +38,16 @@ const ProductSelection = () => {
       }, []);
     
     return (
-      
-
-                    
-            <div className="productSelection_container">
-            
-                {products.map(product => (
-                    <ProductCard  
-                    urlImage={product.urlImage} 
-                    name={product.name} 
-                    description={product.description}
-                    price={product.price}/>
-                ))}
-            </div>
-
+        <div className="productSelection_container">
+        
+            {products.map(product => (
+                <ProductCard  
+                urlImage={product.urlImage} 
+                name={product.name} 
+                description={product.description}
+                price={product.price}/>
+            ))}
+        </div>
     );
 };
 

@@ -25,6 +25,7 @@ const ProductCard = ({ urlImage, name, description, price  }) => {
               </div>
               </div>     
         </div> 
+       
        {isOver && 
        <div className="productCard_container-overlay"> 
           <img className="vector__share" alt="Share" src={vectorShare}/>

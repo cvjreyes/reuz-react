@@ -11,6 +11,7 @@ const DropDowns = () => {
   const handlerLoadSubcategories = function (e) {
       
       const category = e.target.value;
+      console.log(e.target.value)
       setSelcategory(category);
     
   }
@@ -41,10 +42,12 @@ const DropDowns = () => {
           .then((json) => setProducts(json));
       }, []);
 
+      console.log(selcategory, categories, subcategories)
+
   return (
     <div className="dropDowns-container">
         <div className="dropdown">
-        <select name="categories" id="selCategories" onClick={handlerLoadSubcategories}>
+        <select name="categories" id="selCategories" onChange={handlerLoadSubcategories}>
                 <option>Seleccione...</option>
                 {categories.map((category) => (
                     <option value={category._id}>{category.name} 
