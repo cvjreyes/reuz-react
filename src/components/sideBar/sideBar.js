@@ -24,31 +24,31 @@ return (
                 <img className="sections__container" src={logo} alt="logo" className="logo_Reuz"/>
                 </Link>
                 </div>
-                <div>
+                <div className="div__sections">
                 <Link to='/yourListings' style={{ textDecoration: 'none' }}>
                 <img className="sections__container" src={listingsLogo} alt="listings Logo" />
                     <span className="sections__container">Your Listings</span>
                 </Link>
                 </div>
-                <div>
+                <div className="div__sections">
                 <Link to='/yourFavorites' style={{ textDecoration: 'none' }}>
                 <img className="sections__container" src={favoritesLogo} alt="favorites Logo" />
                     <span className="sections__container">Your Favourites</span>
                 </Link>
                 </div>
-                <div>
+                <div className="div__sections">
                 <Link to='/messaging' style={{ textDecoration: 'none' }}>
                 <img className="sections__container" src={messagingLogo} alt="messaging Logo" />
                     <span className="sections__container">Messaging</span>
                 </Link>
                 </div>
-                <div>
+                <div className="div__sections">
                 <Link to='/purchases' style={{ textDecoration: 'none' }}>
                 <img className="sections__container" src={purchasesLogo} alt="purchases Logo" />
                     <span className="sections__container">Purchases</span>
                 </Link>
                 </div>
-                <div>
+                <div className="button__sections">
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className="logOutButton"> Log out </button>
                 </Link>
