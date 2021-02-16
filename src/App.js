@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Products from "./pages/products/products";
 import Compra from "./pages/compra/compra";
 import LoginForm from "./pages/loginForm/loginForm";
+import SideBar from "../src/components/sideBar/sideBar.js"
 //import Header from "./components/header/header";
 //import Footer from "./components/footer/footer";
 //import NavBar from "./components/navBar/navBar";
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route exact path="/compra">
             <Compra />
+          </Route>
+          <Route exact path="/sidebar">
+            <SideBar/>
           </Route>
           <Route exact path="/loginForm">
            <LoginForm/> 
