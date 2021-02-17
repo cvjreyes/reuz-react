@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import ProductSelection from "./components/productSelection/productSelection";
 import Products from "./pages/products/products";
 import Compra from "./pages/compra/compra";
-import LoginForm from "./pages/loginForm/loginForm";
+import LoginPage from "./pages/loginPage/loginPage";
 //import Header from "./components/header/header";
 //import Footer from "./components/footer/footer";
 //import NavBar from "./components/navBar/navBar";
@@ -16,11 +16,10 @@ function App() {
   return (
     <div className="app__body">
       <Router>
-        
         <Switch>
-        <Route exact path="/">
-        <Home/>
-        </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/products">
             <Products />
           </Route>
@@ -28,10 +27,10 @@ function App() {
             <Compra />
           </Route>
           <Route exact path="/loginForm">
-           <LoginForm/> 
+            <LoginPage />
           </Route>
-         </Switch>
-        
+        </Switch>
+
       </Router>
     </div>
   );
