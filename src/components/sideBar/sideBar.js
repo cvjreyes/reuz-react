@@ -27,7 +27,7 @@ return (
                 <div className="div__sections">
                 <Link to='/yourListings' style={{ textDecoration: 'none' }}>
                 <img className="sections__container" src={listingsLogo} alt="listings Logo" />
-                    <span className="sections__container">Your Listings</span>
+                    <span className="sections__container"><b>Your Listings</b></span>
                 </Link>
                 </div>
                 <div className="div__sections">
