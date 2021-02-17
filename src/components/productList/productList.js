@@ -5,13 +5,7 @@ import ProductCard from "../productCard/productCard"
 
 const ProductList = (products) => {
     
-    const [produts, setProducts] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/api/products")
-      .then((response) => response.json())
-      .then((json) => setProducts(json));
-  }, []);
-  console.log ([]);
+  console.log (products);
     return (
         <div>
             <span className="productList__title">Listing</span>
