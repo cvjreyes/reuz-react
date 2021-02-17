@@ -10,7 +10,7 @@ import ProductList from "../../components/productList/productList";
 const ManagePage = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/api/5fda64ec381302d9f3a7438a/products")
+        fetch("http://localhost:5000/api/users/5fda64ec381302d9f3a7438a/products")
         .then ((response) => response.json())
         .then ((json) => setProducts(json));
     },[]);

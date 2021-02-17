@@ -7,11 +7,11 @@ const ProductList = (products) => {
     
     const [produts, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5001/api/products")
+    fetch("http://localhost:5000/api/products")
       .then((response) => response.json())
       .then((json) => setProducts(json));
   }, []);
-  console.log (products);
+  console.log ([]);
     return (
         <div>
             <span className="productList__title">Listing</span>
@@ -19,6 +19,8 @@ const ProductList = (products) => {
         {products.map((product) => (
           <ProductCard product={product} key={product._id} />
         ))}
+      </div>
+      <div> <Button className="create_listing_button" alt="Create_listing"/><span>Create listing</span>
       </div>
     </div>
   ); 
@@ -31,7 +33,7 @@ const ProductList = (products) => {
                 price={product.price}/>
             ))}
 
-        <Button className="create_listing_button" alt="Create_listing"/><span>Create listing</span>
+        
         </div>
     ); */
 };
