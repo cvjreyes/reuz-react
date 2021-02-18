@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Forms.css';
 import Button from "../button/Button";
 
-const SignupForm = ({ action }) => {
+const SignupForm = ({ changeModal, action }) => {
 
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
@@ -20,7 +20,7 @@ const SignupForm = ({ action }) => {
                 <div className="form_title">
                     <h1>Create account</h1>
                     <p>Already have an account?
-                        <a href="/" className="form_text_link"> Sign in</a>
+                        <a onClick={changeModal} className="form_text_link"> Sign in</a>
                     </p>
                 </div>
             </div>

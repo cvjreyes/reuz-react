@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //import ProductSelection from "./components/productSelection/productSelection";
 import Products from "./pages/products/products";
 import Compra from "./pages/compra/compra";
-import LoginPage from "./pages/loginPage/loginPage";
 //import Header from "./components/header/header";
 //import Footer from "./components/footer/footer";
 //import NavBar from "./components/navBar/navBar";
@@ -25,9 +24,6 @@ function App() {
           </Route>
           <Route exact path="/compra">
             <Compra />
-          </Route>
-          <Route exact path="/loginForm">
-            <LoginPage />
           </Route>
         </Switch>
 
