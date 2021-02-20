@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import './Forms.css';
 import Button from "../button/Button";
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = ({ changeModal, action }) => {
+
+    const history = useHistory();
 
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
@@ -10,7 +13,36 @@ const LoginForm = ({ changeModal, action }) => {
         password: undefined,
     });
 
-    console.log(formData)
+    const body = {
+        email: formData.email,
+        password: formData.password
+    }
+
+    const handleLogin = () => {
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+        };
+
+        fetch("http://localhost:5000/login", options)
+            .then((response) => response.json())
+            .then((json) => {
+                localStorage.setItem("token", json.token);
+                localStorage.setItem("user", JSON.stringify(json.user));
+                if (json) {
+                    console.log('Login Succesfull', json);
+                    history.replace("/manager")
+                } else {
+                    console.log('Login Failed!')
+                }
+                window.location.reload(false);
+            });
+
+        action();
+    };
 
     return (
         <div className="form_container">
@@ -41,7 +73,7 @@ const LoginForm = ({ changeModal, action }) => {
                 />
             </div>
 
-            <Button name="Log in" onClick={action} />
+            <Button name="Log in" onClick={handleLogin} />
 
         </div>
     )

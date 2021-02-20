@@ -1,18 +1,50 @@
 import React, { useState } from 'react';
 import './Forms.css';
 import Button from "../button/Button";
+import { useHistory } from 'react-router-dom';
 
 const SignupForm = ({ changeModal, action }) => {
 
+    const history = useHistory();
+
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
-        firstname: undefined,
+        name: undefined,
         lastname: undefined,
         email: undefined,
         password: undefined,
     });
 
-    console.log(formData)
+    const body = {
+        name: formData.name,
+        lastname: formData.lastname,
+        email: formData.email,
+        password: formData.password
+    }
+
+    //Fetch function
+    const handleCreate = () => {
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+        };
+        fetch("http://localhost:5000/api/users", options)
+            .then(async () => {
+                /* authomatic login & redirection to manager page once signed up */
+                return await fetch("http://localhost:5000/login", options)
+                    .then((response) => response.json())
+                    .then((json) => {
+                        localStorage.setItem("token", json.token);
+                        localStorage.setItem("user", JSON.stringify(json.user));
+                        history.replace("/manager");
+                        window.location.reload(false);
+                    });
+            });
+        action();
+    };
 
     return (
         <div className="form_container">
@@ -31,7 +63,7 @@ const SignupForm = ({ changeModal, action }) => {
                         type="text"
                         placeholder="First Name"
                         onChange={(e) =>
-                            setFormData({ ...formData, firstname: e.target.value })
+                            setFormData({ ...formData, name: e.target.value })
                         }
                     />
                     <input
@@ -61,7 +93,7 @@ const SignupForm = ({ changeModal, action }) => {
                 />
             </div>
 
-            <Button name="Sign up" onClick={action} />
+            <Button name="Sign up" onClick={handleCreate} />
 
         </div>
     )

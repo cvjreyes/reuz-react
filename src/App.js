@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import Home from "./pages/home/home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom"
+
+/* Pages */
+import Home from "./pages/home/home";
 import Products from "./pages/products/products";
+import Manager from "./pages/manager/manager";
+
+/* Components */
 import NavBar from "./components/navBar/navBar";
 import Footer from "./components/footer/footer";
 import Modal from "./components/modal/Modal"
 import SignupForm from "./components/forms/SignupForm"
 import LoginForm from "./components/forms/LoginForm"
-
-
 
 function App() {
 
@@ -27,10 +29,29 @@ function App() {
     setLoginVisibility(!loginVisibility)
   }
 
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('user')
+    /* history.push('/') */
+  }
+
   const changeModal = () => {
     handleLoginModal();
     handleSignupModal();
   }
+
+  const checkUserLoggedIn = () => {
+    const userLoggedIn = localStorage.getItem('user')
+    if(userLoggedIn){
+      setKnownUser(true)
+    }else{
+      setKnownUser(false)
+    }
+  }
+
+  useEffect(() => {
+    checkUserLoggedIn();
+  },[])
 
   return (
     <div className="app__body">
@@ -39,6 +60,7 @@ function App() {
           knownUser={knownUser}
           handleSignupModal={handleSignupModal}
           handleLoginModal={handleLoginModal}
+          handleLogout={handleLogout}
         />
         <Switch>
           <Route exact path="/">
@@ -47,24 +69,27 @@ function App() {
           <Route exact path="/products">
             <Products />
           </Route>
+          <Route exact path="/manager">
+            <Manager />
+          </Route>
         </Switch>
         <Footer />
-      </Router>
-      {/* Modals */}
+        {/* Modals */}
         <Modal
           visibility={signupVisibility}
           setVisibility={setSignupVisibility}
           content={
-            <SignupForm changeModal={changeModal} />
+            <SignupForm changeModal={changeModal} action={checkUserLoggedIn}/>
           }
         />
         <Modal
           visibility={loginVisibility}
           setVisibility={setLoginVisibility}
           content={
-            <LoginForm changeModal={changeModal} />
+            <LoginForm changeModal={changeModal} action={checkUserLoggedIn}/>
           }
         />
+      </Router>
     </div>
   );
 }

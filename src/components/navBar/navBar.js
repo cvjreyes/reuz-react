@@ -8,7 +8,7 @@ import Dropdown from "../../components/dropDown/dropDown";
 import Button from "../button/Button";
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ knownUser, handleSignupModal, handleLoginModal }) => {
+const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }) => {
 
   return (
     <div className="navBar">
@@ -42,8 +42,13 @@ const NavBar = ({ knownUser, handleSignupModal, handleLoginModal }) => {
 
       {knownUser === true &&
         <div className="navBar__right">
-          <img className="right__heartIcon" alt=":corazones:" src={vector} />
-          <img className="right__userAvatar" alt="immagine" src={userAvatar} />
+          <Link to="/manager">
+            <img className="right__heartIcon" alt=":corazones:" src={vector} />
+          </Link>
+          <Link to="/manager">
+            <img className="right__userAvatar" alt="immagine" src={userAvatar} />
+          </Link>
+          <Button name="Log out" onClick={handleLogout} />
         </div>
       }
       {knownUser === false &&
