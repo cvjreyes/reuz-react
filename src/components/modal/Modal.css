@@ -40,13 +40,14 @@
     font-family: Manrope;
 }
 
-.close_button_container{
+.close_button_container {
     align-self: flex-end;
 }
 
-.close_button_container > img{
+.close_button_container>img {
     width: 30px;
     height: 30px;
     margin-right: 15px;
     margin-top: 15px;
+    cursor: pointer
 }

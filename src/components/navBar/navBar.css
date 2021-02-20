@@ -29,6 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer
 }
 
 .dropDown__title {
@@ -36,6 +37,7 @@
   font-size: 18px;
   font-family: Raleway;
   font-weight: 500;
+  color: black
 }
 
 .dropDown__arrow {
