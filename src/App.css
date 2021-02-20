@@ -1,1 +1,4 @@
-
+.app__body__sideBar {
+    display: flex;
+    flex-direction: row;
+}

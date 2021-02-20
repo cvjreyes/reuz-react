@@ -1,0 +1,14 @@
+.sections__container {
+  font-family: Raleway;
+  font-style: normal;
+  font-size: 16px;
+  color: #3a3a3a;
+  margin-left: 30px;
+}
+.div__sections {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 34px;
+  cursor: pointer;
+}
