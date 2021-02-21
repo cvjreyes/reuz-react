@@ -48,7 +48,9 @@ const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }
           <Link to="/manager">
             <img className="right__userAvatar" alt="immagine" src={userAvatar} />
           </Link>
-          <Button name="Log out" onClick={handleLogout} />
+          <Link to="/">
+            <Button name="Log out" onClick={handleLogout} />
+          </Link>
         </div>
       }
       {knownUser === false &&

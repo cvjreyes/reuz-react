@@ -17,6 +17,7 @@ import LoginForm from "./components/forms/LoginForm"
 function App() {
 
   const [knownUser, setKnownUser] = useState(false);
+  const [loggedUser, setLoggedUser] = useState('User not logged in');
 
   const [signupVisibility, setSignupVisibility] = useState(false);
   const [loginVisibility, setLoginVisibility] = useState(false)
@@ -32,7 +33,7 @@ function App() {
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    /* history.push('/') */
+    checkUserLoggedIn();
   }
 
   const changeModal = () => {
@@ -41,17 +42,21 @@ function App() {
   }
 
   const checkUserLoggedIn = () => {
-    const userLoggedIn = localStorage.getItem('user')
-    if(userLoggedIn){
-      setKnownUser(true)
-    }else{
+    const userLoggedIn = localStorage.getItem('user');
+    if (userLoggedIn) {
+      setKnownUser(true);
+      const userId = JSON.parse(userLoggedIn).id;
+      fetch("http://localhost:5000/api/users/" + userId)
+        .then((response) => response.json())
+        .then((json) => setLoggedUser(json));
+    } else {
       setKnownUser(false)
     }
   }
 
   useEffect(() => {
     checkUserLoggedIn();
-  },[])
+  }, [])
 
   return (
     <div className="app__body">
@@ -70,7 +75,7 @@ function App() {
             <Products />
           </Route>
           <Route exact path="/manager">
-            <Manager />
+            <Manager user={loggedUser}/>
           </Route>
         </Switch>
         <Footer />
@@ -79,14 +84,14 @@ function App() {
           visibility={signupVisibility}
           setVisibility={setSignupVisibility}
           content={
-            <SignupForm changeModal={changeModal} action={checkUserLoggedIn}/>
+            <SignupForm changeModal={changeModal} action={checkUserLoggedIn} />
           }
         />
         <Modal
           visibility={loginVisibility}
           setVisibility={setLoginVisibility}
           content={
-            <LoginForm changeModal={changeModal} action={checkUserLoggedIn}/>
+            <LoginForm changeModal={changeModal} action={checkUserLoggedIn} />
           }
         />
       </Router>
