@@ -4,7 +4,7 @@
   align-items: center;
   position: ;
   width: 100%;
-  height: 50px;
+  height: 100px;
   padding: 25px;
   background-color: #fcf8f3;
   z-index: 1;
@@ -13,8 +13,10 @@
 
 .navBar__left {
   display: flex;
-  flex-direction: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   margin-left: 30px;
+  width: 250px;
 }
 
 .logo {
@@ -27,12 +29,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 40px;
+  cursor: pointer
 }
 
 .dropDown__title {
-  margin: 0;
-  padding: 0;
+  margin-top: 2.5px;
+  font-size: 18px;
+  font-family: Raleway;
+  font-weight: 500;
+  color: black
 }
 
 .dropDown__arrow {
@@ -43,12 +48,17 @@
 .navBar__searchBox {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  background-color: white;
+  width: 30%;
+  padding-left: 10px;
+  margin-left: 20%;
 }
 
 .navBar__searchBox input {
   border: none;
+  height: 45px;
 }
 
 .searchBox_ellipse {
@@ -66,7 +76,11 @@
 
 .searchBox__input {
   width: 450px;
-  height: 30px;
+  height: 45px;
+  font-family: Raleway;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
 }
 
 .navBar__right {
@@ -84,11 +98,26 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-left: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 @media screen and (max-width: 768px) {
   .navBar__dropDown {
     margin-left: 15px;
   }
+}
+
+.navbar_text_link {
+  color: #E89F71;
+  font-size: 18px;
+  font-family: Raleway;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-right: 50px;
+  cursor: pointer
+}
+
+.navbar_text_link:hover {
+  color: #cc865a
 }

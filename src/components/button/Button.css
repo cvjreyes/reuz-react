@@ -1,0 +1,26 @@
+.button_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 30px;
+  font-size: 10px;
+  border: 1px solid #e89f71;
+  background-color: white;
+  width: auto;
+  padding: 2.5px 50px;
+  height: 48px;
+  cursor: pointer
+}
+
+.button_container:hover {
+  background-color: #faf2ed;
+}
+
+.button_content {
+  margin: auto;
+  color: #e89f71;
+  padding: 0;
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 18px;
+}
