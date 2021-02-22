@@ -1,0 +1,56 @@
+.sideBar__container {
+  width: 213px;
+  height: 1386px;
+  background-color: #fcf8f3;
+  display: flex;
+  flex-direction: column;
+}
+.logo_Reuz {
+  width: 50%;
+  margin-left: 40px;
+  margin-bottom: 90px;
+  margin-top: 34px;
+}
+
+.sections__container {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3a3a3a;
+  margin-left: 30px;
+  
+}
+
+.logOutButton {
+  margin-left: 39px;
+  width: 136px;
+  background: #ffffff;
+  border: 1px solid #e89f71;
+  box-sizing: border-box;
+  align-items: center;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #E89F71;
+
+
+}
+
+.div__sections {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.button__sections {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    margin-bottom: 25px;
+}
