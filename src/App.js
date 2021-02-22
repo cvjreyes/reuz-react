@@ -79,6 +79,9 @@ function App() {
           <Route exact path="/managePage">
             <ManagePage user={loggedUser}/>
           </Route>
+        {/*   <Route exact path="/manager">
+            <Manager user={loggedUser}/>
+          </Route> */}
         <Footer />
         </Switch>
         {/* Modals */}
