@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -5,7 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 /* Pages */
 import Home from "./pages/home/home";
 import Products from "./pages/products/products";
-import Manager from "./pages/manager/manager";
+//import Manager from "./pages/manager/manager";
+import ManagePage from "./pages/managePage/managePage";
 
 /* Components */
 import NavBar from "./components/navBar/navBar";
@@ -73,11 +75,13 @@ function App() {
           </Route>
           <Route exact path="/products">
             <Products />
+            </Route>
+          <Route exact path="/managePage">
+            <ManagePage />
           </Route>
-          <Route exact path="/manager">
+          /*<Route exact path="/manager">
             <Manager user={loggedUser}/>
-          </Route>
-        </Switch>
+          </Route>*/
         <Footer />
         {/* Modals */}
         <Modal
@@ -94,9 +98,9 @@ function App() {
             <LoginForm changeModal={changeModal} action={checkUserLoggedIn} />
           }
         />
+         </Switch>
       </Router>
     </div>
   );
 }
-
 export default App;

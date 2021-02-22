@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+.productCard {
+    position: absolute;
+    top: 269px;
+    left: 367px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    
+}
+
+
+

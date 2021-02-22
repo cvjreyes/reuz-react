@@ -1,7 +1,7 @@
 //import { Dropdown } from "antd";
 import { useState } from "react";
 import "./dropDown.css";
-import DropLine from "../../assets/navBar/Line.svg";
+//import DropLine from "../../assets/navBar/Line.svg";
 
 const Dropdown = () => {
     const [showDropDown, setshowDropDown] = useState(false);
@@ -25,6 +25,3 @@ const Dropdown = () => {
 } 
 
 export default Dropdown;
-
-//<div className="dropdown__dropdown">Products</div>
-//<div className="productDropdown__scrollList"></div>
