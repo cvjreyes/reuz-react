@@ -9,7 +9,7 @@ const ManagePage = ({ user }) => {
     return (
         <>
             <SideBar className="sidebar__container"/>
-            <div className="managerMain__container">
+            <div className="manager__container">
                 <Button name="Create listing" />
                 <Link className="create">Edit and create listings</Link>
                 <ProductList className="productList_container" user={user} />
