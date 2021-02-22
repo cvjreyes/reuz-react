@@ -1,35 +1,36 @@
 import { useEffect, useState } from "react";
-import { Button } from "antd";
+//import { Button } from "antd";
 import "./productList.css";
 import ProductCard from "../productCard/productCard"
 
-const ProductList = (products) => {
-    
-  console.log (products);
+const ProductList = () => {
+  const [products, setProducts] = useState(null);
+  useEffect(() => {
+      fetch("http://localhost:5000/api/users/5fda64ec381302d9f3a7438a/products", {
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json"
+          }
+      })
+      .then ((response) => response.json())
+      .then ((json) => {
+          console.log(json);
+          setProducts(json);
+      });
+  }, []);
     return (
         <div>
-            <span className="productList__title">Listing</span>
-      <div className="productList__container">
-        {products.map((product) => (
-          <ProductCard product={product} key={product._id} />
-        ))}
-      </div>
-      <div> <Button className="create_listing_button" alt="Create_listing"/><span>Create listing</span>
+      <div className="productCard">
+        {products && products.map((product) => (
+          <ProductCard className="productCard"
+                    products={products}
+                    urlImage={product.urlImage} 
+                    name={product.name} 
+                    description={product.description}
+                    price={product.price}/>
+         ))}
       </div>
     </div>
   ); 
-        /*className="productList_container">
-            {products.map((product) => (
-                <ProductList
-                urlImage={product.urlImage} 
-                name={product.name} 
-                description={product.description}
-                price={product.price}/>
-            ))}
-
-        
-        </div>
-    ); */
 };
-
 export default ProductList;

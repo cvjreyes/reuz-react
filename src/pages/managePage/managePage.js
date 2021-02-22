@@ -1,30 +1,33 @@
 import "./managePage.css";
-import SideBar from "../../components/navBar/navBar";
-import ProductSelection from "../../components/productSelection/productSelection";
+import SideBar from "../../components/sideBar/sideBar";
+import NavBar2 from "../../components/navBar2/navBar2";
+//import ProductSelection from "../../components/productSelection/productSelection";
 import ShowMore from "../../components/showMore/showMore";
 import Footer from "../../components/footer/footer";
 import {useEffect, useState } from "react";
 //import ProductCard from "../../components/productCard/productCard";
 import ProductList from "../../components/productList/productList";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 
 const ManagePage = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        fetch("http://localhost:5000/api/users/5fda64ec381302d9f3a7438a/products")
-        .then ((response) => response.json())
-        .then ((json) => setProducts(json));
-    },[]);
-
     return (
         <div>
-        
-            <div className="sidebar__container">
-            <SideBar />
+            <div>
+            <NavBar2 />
+            <Button className= "button_createListing">Create listing</Button>
+            <Link className= "create">Edit and create listings</Link>
+            <ProductList className= "productList_container" />
+            <Link className= "review">Review your listings</Link>
             </div>
-            <ProductList products={products} className="productslist__container" />
+            <div>
+            <SideBar className="sidebar__container"></SideBar> ></div>
+            <div>
             <ShowMore />
             <Footer />
-        </div>
+            </div>
+            </div>
+            
     )
 };
  export default ManagePage;
