@@ -77,12 +77,10 @@ function App() {
             <Products />
             </Route>
           <Route exact path="/managePage">
-            <ManagePage />
+            <ManagePage user={loggedUser}/>
           </Route>
-          /*<Route exact path="/manager">
-            <Manager user={loggedUser}/>
-          </Route>*/
         <Footer />
+        </Switch>
         {/* Modals */}
         <Modal
           visibility={signupVisibility}
@@ -98,7 +96,6 @@ function App() {
             <LoginForm changeModal={changeModal} action={checkUserLoggedIn} />
           }
         />
-         </Switch>
       </Router>
     </div>
   );

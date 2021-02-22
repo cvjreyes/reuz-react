@@ -34,7 +34,7 @@ const LoginForm = ({ changeModal, action }) => {
                 localStorage.setItem("user", JSON.stringify(json.user));
                 if (json) {
                     console.log('Login Succesfull', json);
-                    history.replace("/manager")
+                    history.replace("/managePage")
                 } else {
                     console.log('Login Failed!')
                 }

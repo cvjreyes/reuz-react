@@ -39,7 +39,7 @@ const SignupForm = ({ changeModal, action }) => {
                     .then((json) => {
                         localStorage.setItem("token", json.token);
                         localStorage.setItem("user", JSON.stringify(json.user));
-                        history.replace("/manager");
+                        history.replace("/managePage");
                         window.location.reload(false);
                     });
             });
