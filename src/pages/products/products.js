@@ -19,7 +19,7 @@ export const Products = () => {
                 </div>
             </div>
 
-            <ProductSelection className="productos__container"/>
+            {/* <ProductSelection className="productos__container"/> */}
             <ShowMore />
             <Footer />
         </div>
