@@ -20,14 +20,16 @@ const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }
             alt="Reuz logo"
           />
         </Link>
-        <div className="navBar__dropDown">
-          <Link to="/products">
-            <span
-              className="dropDown__title"
-            >Products</span>
-          </Link>
-          <Dropdown />
-        </div>
+        {knownUser === false &&
+          <div className="navBar__dropDown">
+            <Link to="/products">
+              <span
+                className="dropDown__title"
+              >Products</span>
+            </Link>
+            <Dropdown />
+          </div>
+        }
       </div>
 
       <div className="navBar__searchBox">
@@ -42,10 +44,10 @@ const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }
 
       {knownUser === true &&
         <div className="navBar__right">
-          <Link to="/manager">
+          <Link to="/yourListings">
             <img className="right__heartIcon" alt=":corazones:" src={vector} />
           </Link>
-          <Link to="/manager">
+          <Link to="/yourListings">
             <img className="right__userAvatar" alt="immagine" src={userAvatar} />
           </Link>
           <Link to="/">

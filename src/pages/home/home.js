@@ -12,10 +12,10 @@ export const Home = () => {
     <div>
       <Carrousel />
       <Postit
-        title="The best second hand items"
+        title="The Best Second hand items"
         description="Our forniture is made from selected and best 
         quality materials that are suitable for your dream home"
-        button="Buy now!"
+        button="Shop now"
       />
       <Icon />
       <ProductSelection />

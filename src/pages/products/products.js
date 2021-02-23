@@ -9,9 +9,7 @@ export const Products = () => {
 
     return (
         <>
-            <div className="dropDowns-container">
-                <DropDowns />
-            </div>
+            <DropDowns />
             <ProductSelection className="productos__container" />
             <ShowMore />
         </>

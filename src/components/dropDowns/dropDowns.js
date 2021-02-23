@@ -6,69 +6,70 @@ import "./rangeSlider.js";
 
 const DropDowns = () => {
 
-  const [selcategory, setSelcategory] = useState([]);
+    const [selcategory, setSelcategory] = useState([]);
 
-  const handlerLoadSubcategories = function (e) {
-      
-      const category = e.target.value;
-      console.log(e.target.value)
-      setSelcategory(category);
-    
-  }
+    const handlerLoadSubcategories = function (e) {
 
-  const [categories, setCategories] = useState([]);
-  
-  useEffect(() => {
-      fetch("http://localhost:5000/api/categories")
-        .then((response) => response.json())
-        .then((json) => setCategories(json));
+        const category = e.target.value;
+        console.log(e.target.value)
+        setSelcategory(category);
+
+    }
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/api/categories")
+            .then((response) => response.json())
+            .then((json) => setCategories(json));
     }, []);
-  
-  const [subcategories, setSubcategories] = useState([]);
-  
-  useEffect(() => {
-      fetch(`http://localhost:5000/api/categories/${selcategory}/subcategories`)
-        .then((response) => response.json())
-        .then((json) => setSubcategories(json));
+
+    const [subcategories, setSubcategories] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/categories/${selcategory}/subcategories`)
+            .then((response) => response.json())
+            .then((json) => setSubcategories(json));
     }, [selcategory]);
 
 
 
     const [products, setProducts] = useState([]);
-    
+
     useEffect(() => {
         fetch("http://localhost:5000/api/products")
-          .then((response) => response.json())
-          .then((json) => setProducts(json));
-      }, []);
+            .then((response) => response.json())
+            .then((json) => setProducts(json));
+    }, []);
 
-      console.log(selcategory, categories, subcategories)
+    console.log(selcategory, categories, subcategories)
 
-  return (
-    <div className="dropDowns-container">
-        <div className="dropdown">
-        <select name="categories" id="selCategories" onChange={handlerLoadSubcategories}>
-                <option>Seleccione...</option>
-                {categories.map((category) => (
-                    <option value={category._id}>{category.name} 
-                    </option>
-                ))}
-            </select>
-        </div>      
+    return (
+        <div className="dropDowns-container">
+            <div className="dropdown">
+                <select name="categories" id="selCategories" onChange={handlerLoadSubcategories}>
+                    <option>Categories</option>
+                    {categories.map((category) => (
+                        <option value={category._id}>{category.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
 
-        <div className="dropdown">
-        <select name="subcategories" id="selSubcategories">
-                {subcategories.map(subcategory => (
-                    <option>{subcategory.name} 
-                    </option>
-                ))}
-            </select>
-        </div>   
+            <div className="dropdown">
+                <select name="subcategories" id="selSubcategories">
+                    <option>Subcategories</option>
+                    {subcategories.map(subcategory => (
+                        <option>{subcategory.name}
+                        </option>
+                    ))}
+                </select>
+            </div>
 
-        
 
-    </div>
-  );
+
+        </div>
+    );
 };
 
 

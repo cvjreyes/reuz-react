@@ -2,7 +2,6 @@
     display: flex;
     background-color: #fcf8f3;
     padding: 30px;
-    margin-top: 20px;
 }
 
 .dropdown select {
@@ -20,6 +19,7 @@ select option {
 }
 
 select {
+    max-height: 50px;
     border: 1px solid
 }
 /*RANGE SLIDER*/

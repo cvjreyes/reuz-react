@@ -7,17 +7,24 @@ import { Link } from "react-router-dom";
 
 const ManagePage = ({ user }) => {
     return (
-        <>
-            <SideBar className="sidebar__container"/>
-            <div className="manager__container">
-                <Button name="Create listing" />
-                <Link className="create">Edit and create listings</Link>
-                <ProductList className="productList_container" user={user} />
-                <Link className="review">Review your listings</Link>
+        <div className="manager__container">
+            <SideBar className="sidebar__container" />
+            <div className="elementsArea__container">
+                <div className="topArea__container">
+                    <div className="elementsArea__text">
+                        <Link className="review">Review your listings</Link>
+                        <Link className="create">Edit and create listings</Link>
+                    </div>
+                    <div className="elementsArea__button">
+                        <Button name="Create listing" />
+                    </div>
+                </div>
+                <div className="products__container">
+                    <ProductList className="productList_container" user={user} />
+                </div>
                 <Button name="Show more" />
             </div>
-            
-        </>
+        </div>
 
     )
 };

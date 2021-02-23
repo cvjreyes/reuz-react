@@ -76,11 +76,11 @@ function App() {
           <Route exact path="/products">
             <Products />
             </Route>
-          <Route exact path="/managePage">
+          <Route exact path="/yourListings">
             <ManagePage user={loggedUser}/>
           </Route>
-        <Footer />
         </Switch>
+        <Footer />
         {/* Modals */}
         <Modal
           visibility={signupVisibility}

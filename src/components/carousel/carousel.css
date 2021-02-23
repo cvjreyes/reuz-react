@@ -1,7 +1,7 @@
 .arrowButtons {
   display: flex;
   justify-content: flex-end;
-  margin-top: 50px;
+  padding-top: 50px;
   padding-bottom: 12px;
   padding-right: 60px;
   background-color: #fcf8f3;
@@ -101,8 +101,8 @@
   justify-content: space-around;
   position: absolute;
   width: 275px;
-  height: 100px;
-  left: 630px;
+  height: 150px;
+  margin-left: 70%;
   top: 450px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(31px);
