@@ -4,6 +4,8 @@ import ShowMore from "../../components/showMore/showMore";
 import ProductList from "../../components/productList/productList";
 import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
+import Footer from "../../components/footer/footer";
+import { Components } from "antd/lib/date-picker/generatePicker";
 
 const ManagePage = ({ user }) => {
     return (
@@ -24,8 +26,14 @@ const ManagePage = ({ user }) => {
                 </div>
                 <Button name="Show more" />
             </div>
-        </div>
-
+            <div>
+            <SideBar className="sidebar__container"></SideBar> </div>
+            <div>
+            <ShowMore />
+            <Footer />
+            </div>
+            </div>
+            
     )
 };
 export default ManagePage;
