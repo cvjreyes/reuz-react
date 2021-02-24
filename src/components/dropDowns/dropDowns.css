@@ -6,7 +6,7 @@
 
 .dropdown select {
     border: none;
-    height: 45px;
+    height: 40px;
     width: 185px;
     padding: 10px;
     margin-left: 25px;
@@ -19,6 +19,7 @@ select option {
 }
 
 select {
+    max-height: 50px;
     border: 1px solid
 }
 /*RANGE SLIDER*/

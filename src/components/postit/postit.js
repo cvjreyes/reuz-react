@@ -1,8 +1,12 @@
+import { useHistory } from "react-router-dom";
 import "./postit.css";
 
 const Postit = ({ title, description, button }) => {
+
+  const history = useHistory();
+
   const handleClick = () => {
-    console.log("hola");
+    history.push("/products")
   };
 
   return (
@@ -11,9 +15,9 @@ const Postit = ({ title, description, button }) => {
         <h1>{title}</h1>
       </div>
       <div className="postit__description">{description}</div>
-      <button className="MyButton" onClick={handleClick}>
+      <div className="MyButton" onClick={handleClick}>
         <h1 className="realButton">{button}</h1>
-      </button>
+      </div>
     </div>
   );
 };

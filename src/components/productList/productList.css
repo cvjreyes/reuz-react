@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 .productCard {
-    position: absolute;
+    position: static;
     top: 269px;
     left: 367px;
     display: flex;

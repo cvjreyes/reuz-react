@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import ProductCard from "../productCard/productCard";
 import "./productSelection.css";
+
 const ProductSelection = () => {
     const [selcategory, setSelcategory] = useState([]);
     const handlerLoadSubcategories = function (e) {
         const category = e.target.value;
         setSelcategory(category);
     }
-    console.log();
+    
+    //console.log();
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/api/categories")
@@ -36,6 +38,7 @@ const ProductSelection = () => {
                 price={product.price}/>
             ))}
         </div>
+
     );
 };
 export default ProductSelection;
