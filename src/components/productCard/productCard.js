@@ -20,7 +20,7 @@ const ProductCard = ({ urlImage, name, description, price }) => {
           <span className="productCard_title">{name}</span>
           <span className="productCard_description">{description}</span>
           <div className="prices">
-            <span className="productCard_price">{price}</span>
+            <span className="productCard_price">{price}€</span>
           </div>
         </div>
       </div>
