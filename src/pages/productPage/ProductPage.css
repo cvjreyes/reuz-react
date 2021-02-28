@@ -1,3 +1,118 @@
-.productPage__container{
+.productPage__container {
     min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.productPage_images__container {
+    background-color: blanchedalmond;
+    height: 500px;
+    margin: 50px 200px;
+}
+
+.productPage_info__container {
+    margin: 10px 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.productPage_location__container {
+    background-color: blanchedalmond;
+    height: 500px;
+    margin: 10px 200px;
+}
+
+.productPage_info_area {
+    width: 60%;
+}
+
+.productPage_info_productTitle {
+    color: #3f3f3f;
+    font-family: Mulish;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.productPage_info_breadcrumbs {
+    color: #a1a1a1;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.productPage_info_divider {
+    width: 90%;
+    height: 0px;
+    border: 1px solid #E5E5E5;
+}
+
+.productPage_info_subtitle {
+    color: #696871;
+    font-family: Mulish;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.productPage_info_text {
+    max-width: 90%;
+    font-family: Raleway;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.productPage_info_price {
+    font-family: Mulish;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.productPage_contact_area {
+    width: 40%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.productPage_contact_block {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background: white;
+    padding: 50px 50px;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 20px;
+}
+
+.productPage_contact_block>h2 {
+    font-family: Mulish;
+    color: #1F2041;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.productPage_contact_button {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px 50px;
+    background: #E89F71;
+    color: #FFFFFF;
+    font-family: Mulish;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.productPage_contact_button>img {
+    margin: 10px
 }
