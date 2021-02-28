@@ -5,14 +5,24 @@ import vectorLike from "../../assets/hover/vectorLike.svg";
 import ellipseNew from "../../assets/productCard/ellipseNew.svg";
 import { Link, useHistory } from "react-router-dom";
 
-const ProductCard = ({ urlImage, name, description, price }) => {
+const ProductCard = ({ productId, urlImage, name, description, price }) => {
 
   /* const { urlImage, name, description, price } = products; */
 
   const [isOver, setIsOver] = useState(false);
+
+  const history = useHistory();
+
+  const goToProduct = () => {
+    history.push(`/products/${productId}`)
+  }
+
   return (
     <div className="container1" onMouseEnter={() => { setIsOver(true) }} onMouseLeave={() => { setIsOver(false) }}>
-      <div className="productCard_image__container" style={{ backgroundImage: `url(${urlImage})` }}></div>
+      <div className="productCard_image__container"
+        style={{ backgroundImage: `url(${urlImage})` }}
+
+      ></div>
       <div>
         <img className="productCard_topRight__container" alt="New" src={ellipseNew} /><span className="topRight__text">New</span></div>
       <div className="productCard_container">
@@ -25,7 +35,7 @@ const ProductCard = ({ urlImage, name, description, price }) => {
         </div>
       </div>
       {isOver &&
-        <div className="productCard_container-overlay">
+        <div className="productCard_container-overlay" onClick={goToProduct}>
           <Link>
             <img className="vector__share" alt="Share" src={vectorShare} />
             <span className="vector__share__text">Share</span>

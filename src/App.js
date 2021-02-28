@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 /* Pages */
 import Home from "./pages/home/home";
 import Products from "./pages/products/products";
-//import Manager from "./pages/manager/manager";
+import ProductPage from "./pages/productPage/ProductPage";
 import ManagePage from "./pages/managePage/managePage";
 
 /* Components */
@@ -75,9 +75,12 @@ function App() {
           </Route>
           <Route exact path="/products">
             <Products />
-            </Route>
+          </Route>
+          <Route exact path="/products/:id">
+            <ProductPage />
+          </Route>
           <Route exact path="/yourListings">
-            <ManagePage user={loggedUser}/>
+            <ManagePage user={loggedUser} />
           </Route>
         </Switch>
         <Footer />

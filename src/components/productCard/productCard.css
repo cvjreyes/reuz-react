@@ -16,6 +16,7 @@
   top: 0;
   left: 0;
   background-color: #3a3a3a73;
+  cursor:pointer;
 }
 
 .productCard_topRight__container {
