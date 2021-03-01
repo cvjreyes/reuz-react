@@ -15,47 +15,50 @@ const SideBar = () => {
     const [messaging, setMessaging] = useState();
     const [purchases, setPurchases] = useState();
 
-const history = useHistory ();
+    const history = useHistory();
 
-return (
-    <div className="sideBar__container">
-                <div className="logo__container"> 
+    return (
+        <div className="sideBar__container">
+            <div className="logo__container">
                 <Link to='/' >
-                <img className="sections__container" src={logo} alt="logo" className="logo_Reuz"/>
+                    <img className="sections__container" src={logo} alt="logo" className="logo_Reuz" />
                 </Link>
-                </div>
-                <div className="div__sections">
+            </div>
+            <div className="div__sections">
                 <Link to='/yourListings' style={{ textDecoration: 'none' }}>
-                <img className="sections__container" src={listingsLogo} alt="listings Logo" />
+                    <img className="sections__container" src={listingsLogo} alt="listings Logo" />
                     <span className="sections__container"><b>Your Listings</b></span>
                 </Link>
-                </div>
-                <div className="div__sections">
-                <Link to='/yourFavorites' style={{ textDecoration: 'none' }}>
-                <img className="sections__container" src={favoritesLogo} alt="favorites Logo" />
+            </div>
+            <div className="div__sections">
+                {/* Pending to update link */}
+                <Link to='/yourListings' style={{ textDecoration: 'none' }}>
+                    <img className="sections__container" src={favoritesLogo} alt="favorites Logo" />
                     <span className="sections__container">Your Favourites</span>
                 </Link>
-                </div>
-                <div className="div__sections">
-                <Link to='/messaging' style={{ textDecoration: 'none' }}>
-                <img className="sections__container" src={messagingLogo} alt="messaging Logo" />
+            </div>
+            <div className="div__sections">
+                {/* Pending to update link */}
+                <Link to='/yourListings' style={{ textDecoration: 'none' }}>
+                    <img className="sections__container" src={messagingLogo} alt="messaging Logo" />
                     <span className="sections__container">Messaging</span>
                 </Link>
-                </div>
-                <div className="div__sections">
-                <Link to='/purchases' style={{ textDecoration: 'none' }}>
-                <img className="sections__container" src={purchasesLogo} alt="purchases Logo" />
+            </div>
+            <div className="div__sections">
+                {/* Pending to update link */}I
+                <Link to='/yourListings' style={{ textDecoration: 'none' }}>
+                    <img className="sections__container" src={purchasesLogo} alt="purchases Logo" />
                     <span className="sections__container">Purchases</span>
                 </Link>
-                </div>
-                <div className="button__sections">
+            </div>
+            {/* <div className="button__sections">
                 <Link to='/' style={{ textDecoration: 'none' }}>
                     <button className="logOutButton"> Log out </button>
                 </Link>
-                </div>
+            </div> */}
         </div>
 
-)
+    )
 };
 
 export default SideBar;

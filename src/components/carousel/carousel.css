@@ -1,7 +1,7 @@
 .arrowButtons {
   display: flex;
   justify-content: flex-end;
-  margin-top: 50px;
+  padding-top: 50px;
   padding-bottom: 12px;
   padding-right: 60px;
   background-color: #fcf8f3;
@@ -27,10 +27,8 @@
   border: none;
 }
 
-
 .carousel__container {
-
-  background-color: #fcf8f3
+  background-color: #fcf8f3;
 }
 
 .carousel {
@@ -82,11 +80,13 @@
   border-radius: 25px;
   background: #e89f71;
 }
+
 .line1 {
   position: absolute;
   width: 28px;
   height: 28px;
 }
+
 .line2 {
   position: absolute;
   width: 28px;
@@ -94,15 +94,15 @@
 }
 
 /*CONTAINER PEQUEÑO*/
+
 .pequeño_contenedor {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: absolute;
   width: 275px;
-  height: 100px;
-  
-  left: 630px;
+  height: 150px;
+  margin-left: 70%;
   top: 450px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(31px);
@@ -120,6 +120,7 @@
   font-size: 16px;
   color: #616161;
 }
+
 .flecha {
   position: absolute;
   left: 75%;
