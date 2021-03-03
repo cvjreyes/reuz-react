@@ -12,7 +12,7 @@ import './ProductPage.css'
 import '../../components/forms/Forms.css';
 import Leaflet from 'leaflet/dist/leaflet.css'
 
-const ProductPage = ({user}) => {
+const ProductPage = ({ user }) => {
 
     /* Product fetch */
     const params = useParams();
@@ -28,7 +28,7 @@ const ProductPage = ({user}) => {
         })
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
+                /* console.log(json); */
                 setProductInfo(json);
             });
     }, []);
@@ -42,7 +42,7 @@ const ProductPage = ({user}) => {
     const [loggedUser, setLoggedUser] = useState(user);
 
 
-    console.log(user)
+    console.log(productInfo)
 
     const checkUserLoggedIn = () => {
         const userLoggedIn = localStorage.getItem('user');
@@ -151,7 +151,7 @@ const ProductPage = ({user}) => {
                         <div className="productPage_info_area">
                             <div className="productPage_info_productName">
                                 <h2 className="productPage_info_productTitle">{productInfo.name}</h2>
-                                <p className="productPage_info_breadcrumbs">Home {'>'} Category</p>
+                                <p className="productPage_info_breadcrumbs">Home {'>'} Category {'>'} Subcategory {/* {productInfo.product_subcategory_id.name} */}</p>
                                 <div className="productPage_info_divider" />
                             </div>
                             <div className="productPage_info_productDescription">
@@ -163,7 +163,7 @@ const ProductPage = ({user}) => {
                                     of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through
                                     the cites of the word in classical literature, discovered the undoubtable source.
                                 </p>
-                                <h2 className="productPage_info_subtitle">Precio y condiciones</h2>
+                                <h2 className="productPage_info_subtitle">Price and conditions</h2>
                                 <p className="productPage_info_price">{productInfo.price}€</p>
                             </div>
                         </div>
@@ -180,6 +180,7 @@ const ProductPage = ({user}) => {
                     </div>
                     <div className="productPage_location__container">
                         <h2 className="productPage_info_subtitle">Location</h2>
+                        <p>{productInfo.users_id.address}</p>
                         <MapContainer
                             center={productPosition}
                             zoom={16}
