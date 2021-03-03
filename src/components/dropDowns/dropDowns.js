@@ -53,6 +53,12 @@ const DropDowns = () => {
           .then((response) => response.json())
           .then((json) => setProducts(json));
       }, [selcategory]);
+
+      useEffect(() => {
+        fetch(`http://localhost:5000/api/categories/${selcategory}/products`)
+          .then((response) => response.json())
+          .then((json) => setProducts(json));
+      }, [selcategory]);
     
     useEffect(() => {
       console.log(`http://localhost:5000/api/categories/${selcategory}/subcategories/${selsubcategory}/products`);
