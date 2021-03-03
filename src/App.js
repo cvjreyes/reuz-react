@@ -77,7 +77,7 @@ function App() {
             <Products />
           </Route>
           <Route exact path="/products/:id">
-            <ProductPage />
+            <ProductPage user={loggedUser}/>
           </Route>
           <Route exact path="/yourListings">
             <ManagePage user={loggedUser} />

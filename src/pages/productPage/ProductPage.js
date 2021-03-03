@@ -3,14 +3,16 @@ import ContactIcon from '../../assets/message.svg';
 import { useParams } from 'react-router';
 import { MapContainer, TileLayer, Circle, useMap } from 'react-leaflet';
 import Modal from "../../components/modal/Modal"
+import ImageZoomed from "../../components/imageZoomed/ImageZoomed"
 import SignupForm from "../../components/forms/SignupForm"
 import LoginForm from "../../components/forms/LoginForm"
 
 // Styles for the page and the map
 import './ProductPage.css'
+import '../../components/forms/Forms.css';
 import Leaflet from 'leaflet/dist/leaflet.css'
 
-const ProductPage = () => {
+const ProductPage = ({user}) => {
 
     /* Product fetch */
     const params = useParams();
@@ -37,10 +39,10 @@ const ProductPage = () => {
 
     /* User recognition */
     const [knownUser, setKnownUser] = useState(false);
-    const [loggedUser, setLoggedUser] = useState('User not logged in');
+    const [loggedUser, setLoggedUser] = useState(user);
 
 
-    console.log(knownUser)
+    console.log(user)
 
     const checkUserLoggedIn = () => {
         const userLoggedIn = localStorage.getItem('user');
@@ -83,6 +85,24 @@ const ProductPage = () => {
     const changeModal = () => {
         handleLoginModal();
         handleSignupModal();
+    }
+
+    /* Message to the owner of the product */
+
+    //formData : combo for the inputs
+    const [formData, setFormData] = useState({
+        message: undefined
+    });
+
+    const body = {
+        sender: user._id,
+        /* receiver: productInfo.users_id.name, */
+        /* product: productInfo._id, */
+        message: formData.message,
+    }
+
+    const sendMessageToOwner = () => {
+        /* fetch con post a chats */
     }
 
 
@@ -188,7 +208,7 @@ const ProductPage = () => {
                         </MapContainer>
                     </div>
                     {/* Modals */}
-                    <Modal
+                    <ImageZoomed
                         visibility={imageModalVisibility}
                         setVisibility={setImageModalVisibility}
                         content={
@@ -204,7 +224,24 @@ const ProductPage = () => {
                     <Modal
                         visibility={chatModalVisibility}
                         setVisibility={setChatModalVisibility}
-                        content="Here goes the chat"
+                        content={
+                            <div className="form_container">
+                                <h2>Send a message to {productInfo.users_id.name}</h2>
+                                <textarea
+                                    className="form_full_input"
+                                    placeholder="Message"
+                                    rows="10"
+                                    onChange={(e) =>
+                                        setFormData({ ...formData, message: e.target.value })
+                                    }
+                                />
+                                <div className="productPage_contact_button"
+                                    onClick={sendMessageToOwner}>
+                                    <img src={ContactIcon} />
+                                    <span>Send a message</span>
+                                </div>
+                            </div>
+                        }
                     />
                     <Modal
                         visibility={signupVisibility}
