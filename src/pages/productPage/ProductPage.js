@@ -17,7 +17,7 @@ const ProductPage = ({ user }) => {
     /* Product fetch */
     const params = useParams();
     const productId = params.id;
-    const [productInfo, setProductInfo] = useState();
+    const [productInfo, setProductInfo] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:5000/api/products/' + productId, {
@@ -33,8 +33,31 @@ const ProductPage = ({ user }) => {
             });
     }, []);
 
-    // Position after geocoding process
-    const productPosition = [40.42, -3.70]
+    /* Position after geocoding process */
+    // Import API KEY for Open Cage Geocoder service
+
+    const [productPosition, setProductPosition] = useState([40.42, -3.70]);
+    console.log(productPosition)
+
+    const opencageToken = process.env.REACT_APP_OPENCAGE_API_KEY;
+
+    /* if (productInfo) {
+        const opencageAdress = productInfo.users_id.address;
+        const opencageURL = `https://api.opencagedata.com/geocode/v1/json?q=${opencageAdress}&key=${opencageToken}&pretty=1&limit=1&language=es&countrycode=es`;
+        const encodedURL = encodeURI(opencageURL);
+        console.log(encodedURL);
+
+        fetch(encodedURL)
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json)
+                const results = json.results[0].geometry
+                const geolocatedAdress = [results.lat, results.lng]
+                console.log(geolocatedAdress)
+                setProductPosition(geolocatedAdress);
+            });
+
+    } */
 
 
     /* User recognition */
