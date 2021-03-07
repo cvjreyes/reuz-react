@@ -1,0 +1,15 @@
+.pablito{
+    display: flex;
+    flex-direction: right;
+    width: 770px;
+    margin-left:-100px;
+    margin-top: 100px;
+  }
+  .box_pablito{
+  position: absolute;
+  width: 770px;
+  height: 800px;
+  left: 750px;
+  top: 100px;
+  background: #FCF8F3;
+  }

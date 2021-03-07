@@ -15,6 +15,7 @@ import Footer from "./components/footer/footer";
 import Modal from "./components/modal/Modal"
 import SignupForm from "./components/forms/SignupForm"
 import LoginForm from "./components/forms/LoginForm"
+import UploadProduct from "./pages/formProduct/uploadProduct";
 
 function App() {
 
@@ -78,6 +79,9 @@ function App() {
             </Route>
           <Route exact path="/yourListings">
             <ManagePage user={loggedUser}/>
+          </Route>
+          <Route exact path="/uploadProduct">
+            <UploadProduct user={loggedUser} />
           </Route>
         </Switch>
         <Footer />
