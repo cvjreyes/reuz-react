@@ -35,6 +35,7 @@ const ProductList = ({ user }) => {
               name={product.name}
               description={product.description}
               price={product.price}
+              discount={product.discount}
             />
           ))}
       </div>

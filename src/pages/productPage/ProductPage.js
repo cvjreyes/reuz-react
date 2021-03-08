@@ -32,7 +32,6 @@ const ProductPage = ({ user }) => {
             .then((json) => {
                 setProductInfo(json)
             });
-        /* geolocateAddress(); */
     }, []);
 
 
