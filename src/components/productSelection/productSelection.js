@@ -9,7 +9,6 @@ const ProductSelection = () => {
         setSelcategory(category);
     }
 
-    //console.log();
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         fetch("http://localhost:5000/api/categories")
@@ -29,7 +28,6 @@ const ProductSelection = () => {
             .then((json) => setProducts(json));
     }, []);
 
-    console.log(products);
     return (
         <div className="productSelection_container">
             {products.map(product => (
