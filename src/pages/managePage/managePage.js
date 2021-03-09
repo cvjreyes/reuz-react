@@ -1,9 +1,16 @@
 import "./managePage.css";
 import SideBar from "../../components/sideBar/sideBar";
+//import NavBar2 from "../../components/navBar2/navBar2";
+import ProductSelection from "../../components/productSelection/productSelection";
 import ShowMore from "../../components/showMore/showMore";
+import Footer from "../../components/footer/footer";
+import {useEffect, useState } from "react";
+import ProductCard from "../../components/productCard/productCard";
 import ProductList from "../../components/productList/productList";
 import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
+//import Footer from "../../components/footer/footer";
+import { Components } from "antd/lib/date-picker/generatePicker";
 
 const ManagePage = ({ user }) => {
     return (
@@ -24,8 +31,14 @@ const ManagePage = ({ user }) => {
                 </div>
                 <Button name="Show more" />
             </div>
-        </div>
-
+            <div>
+            <SideBar className="sidebar__container"></SideBar> </div>
+            <div>
+            <ShowMore />
+            <Footer />
+            </div>
+            </div>
+            
     )
 };
 export default ManagePage;

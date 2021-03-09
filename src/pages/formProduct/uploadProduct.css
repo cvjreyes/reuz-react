@@ -1,0 +1,110 @@
+.form_container {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+}
+.form_header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.form_title1{    
+    margin-top: 70px;   
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;    
+    color: #19191B;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+.form_body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form_full_input1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1px 16px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-bottom: 30px;
+}
+.form_title2 {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.015em;    
+    color: #696871; 
+    margin-bottom: 30px;
+}
+.form_half_input1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1px 16px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-sizing: border-box;
+    border-radius: 2px;
+    width: 30%;
+    margin-bottom: 30px;
+}
+.button_a{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left:150px;
+    font-size: 10px;
+    border: 1px solid #E89F71;
+    background-color: white;
+    width: 250px;
+    padding: 1px 50px;
+    height: 30px;
+    cursor: pointer
+}
+.button_content {
+    margin: auto;
+    color: #E89F71;
+    padding: 0;
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 18px;
+  }
+.pablito{
+  display: flex;
+  flex-direction: right;
+  width: 770px;
+  margin-left:-100px;
+  margin-top: 100px;
+}
+.box_pablito{
+position: absolute;
+width: 770px;
+height: 1000px;
+left: 750px;
+top: 100px;
+background: #FCF8F3;
+}
+.dbshow{
+    display: flex;
+    background-color:white;    
+    padding: 30px;
+}
+.alert{
+    margin: left;
+    color: red;
+    margin-top:-30px;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
