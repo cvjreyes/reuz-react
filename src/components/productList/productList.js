@@ -21,6 +21,8 @@ const ProductList = ({ user }) => {
       });
   }, [userId]);
 
+  console.log(products)
+
   return (
     <div>
       <div className="productCard">
@@ -28,10 +30,12 @@ const ProductList = ({ user }) => {
           products.map((product) => (
             <ProductCard className="productCard"
               /* products={products[products.indexOf(product)]} */
+              productId={product._id}
               urlImage={product.urlImage}
               name={product.name}
               description={product.description}
               price={product.price}
+              discount={product.discount}
             />
           ))}
       </div>

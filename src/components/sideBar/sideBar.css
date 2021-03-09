@@ -6,8 +6,9 @@
   flex-direction: column;
 }
 .logo_Reuz {
-  width: 50%;
-  margin-left: 40px;
+  width: 90px;
+  height: auto;
+  margin-left: 75px;
   margin-bottom: 90px;
   margin-top: 34px;
 }

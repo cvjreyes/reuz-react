@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./navBar.css";
 import Logo from "../../assets/navBar/logo.png";
 import vector from "../../assets/navBar/Vector.svg";
@@ -9,6 +9,16 @@ import Button from "../button/Button";
 import { Link } from 'react-router-dom';
 
 const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }) => {
+
+  const [searchInput, setSearchInput] = useState('');
+
+  /*  const filterProductByName = () => {
+     if(searchInput.length>5){
+ 
+     }
+     console.log(searchInput)
+   } */
+
 
   return (
     <div className="navBar">
@@ -39,7 +49,9 @@ const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }
         <input
           type="text"
           className="searchBox__input"
-          placeholder="Search for anything!"></input>
+          onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Search for anything!">
+        </input>
       </div>
 
       {knownUser === true &&
