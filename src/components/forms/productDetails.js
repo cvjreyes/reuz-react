@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import ProductImages from "./productImages"
 import './productDetails.css'
-const ProductDetails = ({ name, price, discount, direction, photos }) => {
+const ProductDetails = ({ name, price, discount, direction }) => {
     const history = useHistory();
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
@@ -16,8 +16,7 @@ const ProductDetails = ({ name, price, discount, direction, photos }) => {
         price: undefined,
         discount: undefined,
         direction: undefined,
-        description: undefined,
-        photos: []
+        
     });
     console.log(formData)
     const body = {
@@ -25,8 +24,7 @@ const ProductDetails = ({ name, price, discount, direction, photos }) => {
         price: formData.price,
         discount: formData.discount,
         direction: formData.direction,
-        description: formData.description,
-        photos: formData.photos,
+        
     }
     console.log(body);
     //Fetch function

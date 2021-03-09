@@ -34,7 +34,7 @@ const UpLoadProduct = () => {
         fetch('http://localhost:5000/api/products', {
           "method": "POST",
           "headers": {
-            "Content-Type": "application/json"
+          "Content-Type": "application/json"
           }
         })
           .then((response) => response.json())
@@ -44,7 +44,7 @@ const UpLoadProduct = () => {
           });
       }, []);
     const handleCreate = () => {
-        const options = {
+        const products = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

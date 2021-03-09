@@ -12,10 +12,10 @@ const PhotoLoader = ({ userId, currentStep }) => {
     form_data.append("signup_step", currentStep + 1);
     form_data.append("signup_completed", true);
     const options = {
-      method: "PUT",
+      method: "POST",
       body: form_data,
     };
-    fetch("http://localhost:5000/api/product/" + userId + "/product", options)
+    fetch("http://localhost:5000/api/product/product",)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -28,8 +28,8 @@ const PhotoLoader = ({ userId, currentStep }) => {
         console.log("Error when retrieving images:", error);
       });
     //fetch de les imatges del user
-    // .then(respobse => setPhotoArray([respose]))
-  };
+    // .then(respobse => setPhotoArray([respose])) 
+  }; 
   console.log(photoArray);
   const MAX_ALLOWED = 6;
   const photosAllowed = MAX_ALLOWED - photoArray.length;
@@ -38,7 +38,7 @@ const PhotoLoader = ({ userId, currentStep }) => {
   for (var i = 0; i < photosAllowed; i++) {
     content.push(
       <div className="photoloader__container">
-        <img src={uploadPicture} alt="camera_icon" />
+        <div className= "photoCard__container"  src={uploadPicture} alt="upload_Picture" />
         <form
           id="photo"
           encType="multipart/form-data"
