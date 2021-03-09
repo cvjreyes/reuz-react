@@ -19,9 +19,10 @@
 }
 
 .logo {
-  width: 90.78px;
-  height: 37px;
-  margin-bottom: 5px;
+  width: 90px;
+  height: auto;
+  margin-bottom: 12.5px;
+  margin-left: 20px;
 }
 
 .navBar__dropDown {
