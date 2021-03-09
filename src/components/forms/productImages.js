@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import DropDowns from "../../components/dropDowns/dropDowns";
 import { useHistory} from 'react-router-dom';
 import ProductCard from "../../components/productCard/productCard";
-import {useForm} from 'react-hook-form';
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import './productImages.css'
 import PhotoLoader from '../photoLoader/photoLoader';
 
 const ProductImages = ({ userId }) => {
-    const history = useHistory();
+
+    
     const [products, setProducts] = useState([]);       
-    const {register,errors,handleSubmit} = useForm ();
     const [Entradas,setEntradas] = useState ([])
     const onSubmit = (data,e) => {
     console.log(data)
@@ -22,13 +21,23 @@ e.target.reset();
 }
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
-        description: undefined
-       
+        name: undefined,
+        price: undefined,
+        discount: undefined,
+        direction: undefined,
+        description: undefined,
+        photos: []
     });
+    console.log(formData)
     const body = {
-        description: formData.name
-       
+        name: formData.name,
+        price: formData.price,
+        discount: formData.discount,
+        direction: formData.direction,
+        description: formData.description,
+        photos: formData.photos,
     }
+    console.log(body);
     useEffect(() => {
         fetch('http://localhost:5000/api/products', {
           "method": "POST",
@@ -60,7 +69,7 @@ e.target.reset();
                 <div className="form_title2">
                 <h2>Description</h2>
                 </div>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form >
                     <div className="form_body">
                         <textarea
                             name="undefined"
@@ -70,16 +79,9 @@ e.target.reset();
                             onChange={(e) =>
                                 setFormData({ ...formData, name: e.target.value })
                             }
-                            ref={
-                                register({
-                                    required: { value: true, message: 'Campo obligatorio' },
-                                    minLength: { value: 2, message: 'Minimo 2 letras' }
-                                })
-                            }
+                          
                         ></textarea>
-                        <span className="alert">
-                            {errors?.titulo?.message}
-                        </span>
+                       
                             <div className="form_title2">
                         <h2>Pictures</h2>
                         </div>
@@ -96,10 +98,10 @@ e.target.reset();
                 </div>
                         </div>      
                         <PhotoLoader />                  
-                        <button className="button_a" /*onClick={()=>history.push("")}/*/>
+                        <button className="button_a" onClick={handleCreate}>
                             <h1 className="button_content">Create Listing</h1>
                         </button> 
-                       {/* ´pagina de fernando */}
+                       
                     </div>
                     <div className="box_pablito">
                     <img src={pablo} alt="pablo" className="pablito" />

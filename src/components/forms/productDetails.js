@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import ProductImages from "./productImages"
 import './productDetails.css'
+
 const ProductDetails = ({ name, price, discount, direction, photos }) => {
     const history = useHistory();
     const [visibleForm, setVisibleForm] = useState("first")
@@ -30,15 +31,7 @@ const ProductDetails = ({ name, price, discount, direction, photos }) => {
     }
     console.log(body);
     //Fetch function
-    const handleCreate = () => {
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(body),
-        }
-    }
+  
     return (
         <div>
             {visibleForm === "first" &&
