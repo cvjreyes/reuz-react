@@ -15,7 +15,7 @@ const PhotoLoader = ({ userId, currentStep }) => {
       method: "PUT",
       body: form_data,
     };
-    fetch("http://localhost:5000/api/product/" + userId + "/product", options)
+    fetch("http://localhost:5000/api/product/product")
       .then((response) => {
         if (response.ok) {
           return response.json();
