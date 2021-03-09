@@ -24,7 +24,7 @@ const Slider = () => {
       <div className="slider__container">
         <div className="slider__prices">
           <div className="value">
-            <div className="buble">{sliderData.priceStart + " €"} </div>
+            <div className="buble_min_price">{sliderData.priceStart + " €"} </div>
           </div>
           <input
             type="range"
@@ -43,7 +43,7 @@ const Slider = () => {
 
         <div className="slider__prices">
           <div className="value">
-            <div className="buble">{sliderData.priceEnd + " €"} </div>
+            <div className="buble_max_price">{sliderData.priceEnd + " €"} </div>
           </div>
           <input
             type="range"
@@ -64,4 +64,4 @@ const Slider = () => {
   );
 };
 
-    export default Slider;
+export default Slider;

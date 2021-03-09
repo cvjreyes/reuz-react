@@ -16,7 +16,7 @@ import Footer from "./components/footer/footer";
 import Modal from "./components/modal/Modal"
 import SignupForm from "./components/forms/SignupForm"
 import LoginForm from "./components/forms/LoginForm"
-import Slider from "./components/slider/slider";
+
 
 function App() {
 
