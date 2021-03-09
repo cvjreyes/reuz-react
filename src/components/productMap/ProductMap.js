@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapContainer, TileLayer, Circle, useMap } from 'react-leaflet';
-import Leaflet from 'leaflet/dist/leaflet.css'
+import leaflet from 'leaflet/dist/leaflet.css'
+
 
 const DinamicBounds = ({ position}) => {
     const map = useMap();
