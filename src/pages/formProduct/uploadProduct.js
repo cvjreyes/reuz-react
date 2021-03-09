@@ -4,6 +4,7 @@ import ProductDetails from "../../components/forms/productDetails"
 import ProductImages from "../../components/forms/productImages"
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import "./uploadProduct.css";
+
 const UpLoadProduct = () => {
     const history = useHistory();
     const [visibleForm, setVisibleForm] = useState("first")

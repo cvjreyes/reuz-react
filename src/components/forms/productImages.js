@@ -6,19 +6,12 @@ import pablo from "../../assets/uploadPicture/pablo.svg";
 import './productImages.css'
 import PhotoLoader from '../photoLoader/photoLoader';
 
-const ProductImages = ({ userId }) => {
+const ProductImages = ({ name,price,discoun,direction,description,photo }) => {
 
     
     const [products, setProducts] = useState([]);       
-    const [Entradas,setEntradas] = useState ([])
-    const onSubmit = (data,e) => {
-    console.log(data)
-    setEntradas([
-    ...Entradas,
-    data  
-])
-e.target.reset();
-}
+   
+  
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
         name: undefined,
@@ -50,7 +43,7 @@ e.target.reset();
             console.log(json);
             setProducts(json);
           });
-      }, [userId]);
+      }, []);
     const handleCreate = () => {
         const options = {
             method: "POST",
