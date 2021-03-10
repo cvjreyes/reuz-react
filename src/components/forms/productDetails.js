@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import DropDowns from "../../components/dropDowns/dropDowns";
-import pablo from "../../assets/uploadPicture/pablo.svg";
-import ProductImages from "./productImages"
+import pablo from "../../assets/pablo.png";
 import './productDetails.css'
 
 const ProductDetails = ({name,price,discount,direction, action}) => {
-
-    const [visibleForm, setVisibleForm] = useState("first")
-    const handlevisibleForm = () => {
-        setVisibleForm("second")
-    }
 
    
     //formData : combo for the inputs
@@ -35,7 +29,7 @@ const ProductDetails = ({name,price,discount,direction, action}) => {
   
     return (
         <div>
-            {visibleForm === "first" &&
+           
                 <div className="form_container">
                     <div>
                         <div className="form_title1">
@@ -99,10 +93,8 @@ const ProductDetails = ({name,price,discount,direction, action}) => {
                         </form>
                     </div>
                 </div>
-            }
-                {visibleForm === "second" &&
-            <ProductImages />
-        }
+            
+        
         </div >
     )
 }

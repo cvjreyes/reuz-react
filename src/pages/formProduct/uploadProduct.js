@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import ProductDetails from "../../components/forms/productDetails"
 import ProductImages from "../../components/forms/productImages"
-import pablo from "../../assets/uploadPicture/pablo.svg";
+import pablo from "../../assets/pablo.png";
 import "./uploadProduct.css";
 
 const UpLoadProduct = () => {

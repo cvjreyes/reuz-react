@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DropDowns from "../../components/dropDowns/dropDowns";
 import ProductCard from "../../components/productCard/productCard";
-import pablo from "../../assets/uploadPicture/pablo.svg";
+import pablo from "../../assets/pablo.png";
 import './productImages.css'
 import PhotoLoader from '../photoLoader/photoLoader';
 
