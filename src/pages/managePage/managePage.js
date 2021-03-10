@@ -4,15 +4,22 @@ import SideBar from "../../components/sideBar/sideBar";
 import ProductSelection from "../../components/productSelection/productSelection";
 import ShowMore from "../../components/showMore/showMore";
 import Footer from "../../components/footer/footer";
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../../components/productCard/productCard";
 import ProductList from "../../components/productList/productList";
 import Button from "../../components/button/Button";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 //import Footer from "../../components/footer/footer";
 import { Components } from "antd/lib/date-picker/generatePicker";
 
+
 const ManagePage = ({ user }) => {
+    const history = useHistory();
+
+    const goToUploadProduct = () => {
+        history.push("/uploadProduct")
+    }
+
     return (
         <div className="manager__container">
             <SideBar className="sidebar__container" />
@@ -23,7 +30,7 @@ const ManagePage = ({ user }) => {
                         <Link className="create">Edit and create listings</Link>
                     </div>
                     <div className="elementsArea__button">
-                        <Button name="Create listing" />
+                        <Button name="Create listing" onClick={goToUploadProduct} />
                     </div>
                 </div>
                 <div className="products__container">
@@ -32,13 +39,13 @@ const ManagePage = ({ user }) => {
                 <Button name="Show more" />
             </div>
             <div>
-            <SideBar className="sidebar__container"></SideBar> </div>
+                <SideBar className="sidebar__container"></SideBar> </div>
             <div>
-            <ShowMore />
-            <Footer />
+                <ShowMore />
+                <Footer />
             </div>
-            </div>
-            
+        </div>
+
     )
 };
 export default ManagePage;

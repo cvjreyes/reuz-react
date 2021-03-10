@@ -1,19 +1,38 @@
 import React, { useState } from 'react';
 import ProductDetails from "../../components/forms/productDetails"
 import ProductImages from "../../components/forms/productImages"
-import pablo from "../../assets/pablo.png";
 import "./uploadProduct.css";
 
 const UpLoadProduct = () => {
 
-
+    /* Controls the form to be rendered */
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
         setVisibleForm("second")
     }
 
-    const [products, setProducts] = useState([]);
-       
+    /* Controls the fetch heading towards MongoDB at API endpoint */
+    //formData : combo for the inputs
+    const [formData, setFormData] = useState({
+        name: undefined,
+        price: undefined,
+        discount: undefined,
+        address: undefined,
+        description: undefined
+    });
+
+    //Body: conforms the key/values to be send to MongoDB
+    const body = {
+        name: formData.name,
+        price: formData.price,
+        discount: formData.discount,
+        address: formData.address,
+        description: formData.description
+    };
+
+    console.log(body);
+
+    //Executes the fetch function at the end of the form process
     const handleCreate = () => {
         const options = {
             method: "POST",
@@ -22,30 +41,24 @@ const UpLoadProduct = () => {
             },
             body: JSON.stringify(),
         };
-        fetch('http://localhost:5000/api/products', {
-            "method": "POST",
-            "headers": {
-              "Content-Type": "application/json"
-            }
-          })
-            .then((response) => response.json())
-            .then((json) => {
-              console.log(json);
-              setProducts(json);
-            });
-    }    
-   
+        fetch('http://localhost:5000/api/products', options);
+        console.log("Product created");
+    }
+
     return (
         <div>
             {visibleForm === "first" &&
-                <ProductDetails action={handlevisibleForm} />
+                <ProductDetails
+                    formData={formData}
+                    setFormData={setFormData}
+                    action={handlevisibleForm} />
             }
             {visibleForm === "second" &&
-                <ProductImages  action={ handleCreate}/>
+                <ProductImages
+                    formData={formData}
+                    setFormData={setFormData}
+                    action={handleCreate} />
             }
-            <div className="box_pablito">
-                <img src={pablo} alt="pablo" className="pablito" />
-            </div>
         </div>
     )
 }
