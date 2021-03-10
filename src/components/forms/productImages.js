@@ -8,7 +8,7 @@ import PhotoLoader from '../photoLoader/photoLoader';
 const ProductImages = ({formData, setFormData, action}) => {
 
     
-    const [products, setProducts] = useState([]);       
+         
    
   
     //formData : combo for the inputs    
@@ -31,7 +31,7 @@ const ProductImages = ({formData, setFormData, action}) => {
                             className="form_full_input1"
                             type="text"
                             onChange={(e) =>
-                                setFormData({ ...formData, name: e.target.value })
+                                setFormData({ ...formData, description: e.target.value })
                             }
                           
                         ></textarea>
@@ -39,18 +39,7 @@ const ProductImages = ({formData, setFormData, action}) => {
                             <div className="form_title2">
                         <h2>Pictures</h2>
                         </div>
-                        <div>
-                        <div >
-                        {products != null &&
-                        products.map(product => (
-                <ProductCard  
-                discount={product.discount} 
-                name={product.name} 
-                direction={product.direction}
-                price={product.price}/>
-            ))}
-                </div>
-                        </div>      
+                              
                         <PhotoLoader />                  
                         <button className="button_a" onClick={action}>
                             <h1 className="button_content">Create Listing</h1>

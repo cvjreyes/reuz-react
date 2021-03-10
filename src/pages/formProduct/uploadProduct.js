@@ -3,13 +3,14 @@ import ProductDetails from "../../components/forms/productDetails"
 import ProductImages from "../../components/forms/productImages"
 import pablo from "../../assets/pablo.png";
 import "./uploadProduct.css";
+import ListBody from 'antd/lib/transfer/ListBody';
 
 const UpLoadProduct = () => {
 
 
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
-        console.log(formData)
+
 
         setVisibleForm("second")
     }
@@ -18,55 +19,52 @@ const UpLoadProduct = () => {
         name: undefined,
         price: undefined,
         discount: undefined,
-        direction: undefined,
+        address: undefined,
         description: undefined,
-        photos: []
+       
      
         
     });
     
     const [products, setProducts] = useState([]);
        
-    const handleCreate = () => {
+    
         const body = {
             name: formData.name,
             price: formData.price,
             discount: formData.discount,
-            direction: formData.direction,        
+            address: formData.direction,        
             description: formData.description,
-            photos: formData.photos,   
+               
             
         }
-        console.log(formData)
+        console.log(ListBody)
 
-    
+        const handleCreate = () => {
         const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(body),
+            body: JSON.stringify(),
         };
-        fetch('http://localhost:5000/api/products', {
-            "method": "POST",
-            "headers": {
-              "Content-Type": "application/json"
+        fetch('http://localhost:5000/api/products',options);
+          console.log("Product created");
             }
-          })
-            .then((response) => response.json())
-            .then((json) => {
-              console.log(json);
-              setProducts(json);
-            });
-    }    
-   
+  
     return (
         <div>
             {visibleForm === "first" &&
-                <ProductDetails formData={formData} setFormData={setFormData} action={handlevisibleForm} />
+                <ProductDetails 
+                formData={formData} 
+                setFormData={setFormData} 
+                action={handlevisibleForm} />
             }
             {visibleForm === "second" &&
-                <ProductImages  formData={formData} setFormData={setFormData} action={ handleCreate}/>
+                <ProductImages
+                  formData={formData} 
+                  setFormData={setFormData}
+                   action={ handleCreate}/>
             }
             <div className="box_pablito">
                 <img src={pablo} alt="pablo" className="pablito" />
