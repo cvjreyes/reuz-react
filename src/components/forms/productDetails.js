@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import DropDowns from "../../components/dropDowns/dropDowns";
-import { useHistory } from 'react-router-dom';
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import ProductImages from "./productImages"
 import './productDetails.css'
 
-const ProductDetails = ({ name, price, discount, direction, photos }) => {
-    const history = useHistory();
-    const [visibleForm, setVisibleForm] = useState("first")
-    const handlevisibleForm = () => {
-        setVisibleForm("second")
-    }
+const ProductDetails = ({name,price,discount,direction, action}) => {
+
+   
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
         name: undefined,
         price: undefined,
         discount: undefined,
         direction: undefined,
-        description: undefined,
-        photos: []
+     
+        
     });
     console.log(formData)
     const body = {
@@ -26,8 +22,8 @@ const ProductDetails = ({ name, price, discount, direction, photos }) => {
         price: formData.price,
         discount: formData.discount,
         direction: formData.direction,
-        description: formData.description,
-        photos: formData.photos,
+        
+        
     }
     console.log(body);
     //Fetch function
@@ -88,7 +84,7 @@ const ProductDetails = ({ name, price, discount, direction, photos }) => {
                                     <h2>Category</h2>
                                 </div>
                                 <DropDowns />
-                                <button className="button_a" type="submit" onClick={handlevisibleForm}>
+                                <button className="button_a" type="submit" onClick={action}>
                                     <h1 className="button_content">Next</h1>
                                 </button>
                                 <div className="box_pablito">

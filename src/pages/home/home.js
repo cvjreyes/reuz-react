@@ -5,7 +5,7 @@ import Icon from "../../components/icon/icon";
 import ProductSelection from "../../components/productSelection/productSelection";
 import ShowMore from "../../components/showMore/showMore";
 import Carrousel from "../../components/carousel/carousel";
-import UploadProduct from '../formProduct/uploadProduct';
+
 
 export const Home = () => {
   
@@ -20,7 +20,6 @@ export const Home = () => {
       />
       <Icon />
       <ProductSelection />
-      <UploadProduct />
       <ShowMore />
     </div>
   );
