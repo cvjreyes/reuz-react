@@ -9,18 +9,43 @@ const UpLoadProduct = () => {
 
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
+        console.log(formData)
+
         setVisibleForm("second")
     }
 
+    const [formData, setFormData] = useState({
+        name: undefined,
+        price: undefined,
+        discount: undefined,
+        direction: undefined,
+        description: undefined,
+        photos: []
+     
+        
+    });
+    
     const [products, setProducts] = useState([]);
        
     const handleCreate = () => {
+        const body = {
+            name: formData.name,
+            price: formData.price,
+            discount: formData.discount,
+            direction: formData.direction,        
+            description: formData.description,
+            photos: formData.photos,   
+            
+        }
+        console.log(formData)
+
+    
         const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(),
+            body: JSON.stringify(body),
         };
         fetch('http://localhost:5000/api/products', {
             "method": "POST",
@@ -38,10 +63,10 @@ const UpLoadProduct = () => {
     return (
         <div>
             {visibleForm === "first" &&
-                <ProductDetails action={handlevisibleForm} />
+                <ProductDetails formData={formData} setFormData={setFormData} action={handlevisibleForm} />
             }
             {visibleForm === "second" &&
-                <ProductImages  action={ handleCreate}/>
+                <ProductImages  formData={formData} setFormData={setFormData} action={ handleCreate}/>
             }
             <div className="box_pablito">
                 <img src={pablo} alt="pablo" className="pablito" />

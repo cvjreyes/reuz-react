@@ -11,7 +11,7 @@ const DropDowns = () => {
     const handlerLoadSubcategories = function (e) {
 
         const category = e.target.value;
-        console.log(e.target.value)
+        //console.log(e.target.value)
         setSelcategory(category);
 
     }
@@ -42,7 +42,7 @@ const DropDowns = () => {
             .then((json) => setProducts(json));
     }, []);
 
-    console.log(selcategory, categories, subcategories)
+   // console.log(selcategory, categories, subcategories)
 
     return (
         <div className="dropDowns-container">

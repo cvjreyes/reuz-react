@@ -3,28 +3,11 @@ import DropDowns from "../../components/dropDowns/dropDowns";
 import pablo from "../../assets/pablo.png";
 import './productDetails.css'
 
-const ProductDetails = ({name,price,discount,direction, action}) => {
+const ProductDetails = ({formData, setFormData, action}) => {
 
    
     //formData : combo for the inputs
-    const [formData, setFormData] = useState({
-        name: undefined,
-        price: undefined,
-        discount: undefined,
-        direction: undefined,
-     
-        
-    });
-    console.log(formData)
-    const body = {
-        name: formData.name,
-        price: formData.price,
-        discount: formData.discount,
-        direction: formData.direction,
-        
-        
-    }
-    console.log(body);
+    
     //Fetch function
   
     return (

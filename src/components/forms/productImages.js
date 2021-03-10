@@ -5,25 +5,13 @@ import pablo from "../../assets/pablo.png";
 import './productImages.css'
 import PhotoLoader from '../photoLoader/photoLoader';
 
-const ProductImages = ({description,photo,action}) => {
+const ProductImages = ({formData, setFormData, action}) => {
 
     
     const [products, setProducts] = useState([]);       
    
   
-    //formData : combo for the inputs
-    const [formData, setFormData] = useState({
-       
-        description: undefined,
-        photos: []
-    });
-    console.log(formData)
-    const body = {
-        
-        description: formData.description,
-        photos: formData.photos,
-    }
-    console.log(body);    
+    //formData : combo for the inputs    
       
       
     return (
