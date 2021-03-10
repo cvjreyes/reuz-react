@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './productImages.css'
 import PhotoLoader from "../photoLoader/photoLoader"
-const ProductImages = ({ description, photos }) => {
+const ProductImages = ({ description, PhotoLoader }) => {
     const history = useHistory();
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
@@ -11,24 +11,24 @@ const ProductImages = ({ description, photos }) => {
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
         description: undefined,
-        photos: []
+        PhotoLoader: []
     });
     console.log(formData)
     const body = {
         description: formData.description,
-        photos: formData.photos
+        photoLoader: formData.photos
     }
     console.log(body);
     //Fetch function
-    const handleCreate = () => {
+   const handleCreate = () => {
         const options = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(body),
-        }
-    }
+            body: JSON.stringify(body), 
+        } 
+    } 
     return (
         <div>
             <div className="form_container">
@@ -47,7 +47,7 @@ const ProductImages = ({ description, photos }) => {
                                 className="form_full_input1"
                                 type="text"
                                 onChange={(e) =>
-                                    setFormData({ ...formData, name: e.target.value })
+                                    setFormData({ ...formData, description: e.target.value })
                                 }
                             ></textarea>
                             <div className="form_title2">

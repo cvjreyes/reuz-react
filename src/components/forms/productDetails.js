@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import pablo from "../../assets/uploadPicture/pablo.svg";
 import ProductImages from "./productImages"
 import './productDetails.css'
-const ProductDetails = ({ name, price, discount, direction }) => {
+const ProductDetails = ({ name, price, discount, address }) => {
     const history = useHistory();
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
@@ -15,7 +15,7 @@ const ProductDetails = ({ name, price, discount, direction }) => {
         name: undefined,
         price: undefined,
         discount: undefined,
-        direction: undefined,
+        address: undefined,
         
     });
     console.log(formData)
@@ -28,7 +28,7 @@ const ProductDetails = ({ name, price, discount, direction }) => {
     }
     console.log(body);
     //Fetch function
-    const handleCreate = () => {
+   /* const handleCreate = () => {
         const options = {
             method: "POST",
             headers: {
@@ -36,7 +36,7 @@ const ProductDetails = ({ name, price, discount, direction }) => {
             },
             body: JSON.stringify(body),
         }
-    }
+    } */
     return (
         <div>
             {visibleForm === "first" &&
@@ -86,7 +86,7 @@ const ProductDetails = ({ name, price, discount, direction }) => {
                                     className="form_full_input1"
                                     type="text"
                                     onChange={(e) =>
-                                        setFormData({ ...formData, direction: e.target.value })
+                                        setFormData({ ...formData, address: e.target.value })
                                     }
                                 ></input>
                                 <div className="form_title2">
