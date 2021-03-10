@@ -20,7 +20,7 @@ const UpLoadProduct = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(body),
+            body: JSON.stringify(),
         };
         fetch('http://localhost:5000/api/products', {
             "method": "POST",

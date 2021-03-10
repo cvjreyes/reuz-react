@@ -6,6 +6,11 @@ import './productDetails.css'
 
 const ProductDetails = ({name,price,discount,direction, action}) => {
 
+    const [visibleForm, setVisibleForm] = useState("first")
+    const handlevisibleForm = () => {
+        setVisibleForm("second")
+    }
+
    
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
