@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import ProductDetails from "../../components/forms/productDetails";
 import ProductImages from "../../components/forms/productImages";
 import "./uploadProduct.css";
@@ -78,37 +78,38 @@ const UpLoadProduct = () => {
         fetch('http://localhost:5000/api/photos/${id}');
         console.log("Photo uploaded");
     };
-    return ( <
-        div > {
-            visibleForm === "first" &&
-            <
-            ProductDetails
-            formData = {
-                formData
-            }
-            setFormData = {
-                setFormData
-            }
-            action = {
-                handleCreateNext
-            }
-            />
-        } {
-            visibleForm === "second" &&
+    return (
+        < div >
+            {
+                visibleForm === "first" &&
                 <
-                ProductImages
-            photoArray = {
-                photoArray
+                    ProductDetails
+                    formData={
+                        formData
+                    }
+                    setFormData={
+                        setFormData
+                    }
+                    action={
+                        handleCreateNext
+                    }
+                />
+            } {
+                visibleForm === "second" &&
+                <
+                    ProductImages
+                    photoArray={
+                        photoArray
+                    }
+                    setPhotoArray={
+                        setPhotoArray
+                    }
+                    secondAction={
+                        photos
+                    }
+                />
             }
-            setPhotoArray = {
-                setPhotoArray
-            }
-            secondAction = {
-                photos
-            }
-            />
-        } <
-        /div>
+            < /div>
     )
 }
 export default UpLoadProduct;
