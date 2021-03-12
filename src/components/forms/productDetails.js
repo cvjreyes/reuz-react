@@ -1,9 +1,8 @@
 import React from 'react';
-import DropDowns from "../../components/dropDowns/dropDowns";
+import DropDowns2 from "../../components/dropDowns/dropsDowns2";
 import pablo from "../../assets/pablo.png";
 
 const ProductDetails = ({ formData, setFormData, action }) => {
-
     return (
         <div className="main_form_container">
             <div className="form_container">
@@ -16,7 +15,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                 <form>
                     <div className="form_body">
                         <input
-                            placeholder="Name of the product"
+                            placeholder="Name"
                             className="form_full_input1"
                             type="text"
                             onChange={(e) =>
@@ -24,7 +23,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                             }
                         ></input>
                         <input
-                            placeholder="Price of the product €"
+                            placeholder="Price €"
                             className="form_half_input1"
                             type="number"
                             onChange={(e) =>
@@ -32,7 +31,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                             }
                         ></input>
                         <input
-                            placeholder="Price discount €"
+                            placeholder="Discount €"
                             className="form_half_input1"
                             type="number"
                             onChange={(e) =>
@@ -43,7 +42,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                             <h2>Location</h2>
                         </div>
                         <input
-                            placeholder="Passeig de Gràcia, 52, Barcelona"
+                            placeholder="Address"
                             className="form_full_input1"
                             type="text"
                             onChange={(e) =>
@@ -53,7 +52,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                         <div className="form_title2">
                             <h2>Category</h2>
                         </div>
-                        <DropDowns />
+                        <DropDowns2 />
                         <button className="button_a" type="submit" onClick={action}>
                             <h1 className="button_content">Next</h1>
                         </button>

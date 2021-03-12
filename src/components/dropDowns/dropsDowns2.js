@@ -89,21 +89,9 @@ const DropDowns = () => {
 
         <div className="dropDowns-container">
           <div className="dropdown">
-            <Slider className="slider__container" />
+            
           </div>
         </div>
-      </div>
-
-
-      <div className="productSelection_container">
-
-        {products.map(product => (
-          <ProductCard
-            urlImage={product.urlImage}
-            name={product.name}
-            description={product.description}
-            price={product.price} />
-        ))}
       </div>
 
     </>

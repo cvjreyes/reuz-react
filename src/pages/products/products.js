@@ -5,12 +5,13 @@ import ShowMore from "../../components/showMore/showMore";
 import DropDowns from "../../components/dropDowns/dropDowns";
 
 
+
 export const Products = () => {
 
     return (
         <>
             <DropDowns />
-            <ProductSelection className="productos__container" />
+            {/* <ProductSelection className="productos__container" /> */}
             <ShowMore />
         </>
     )

@@ -15,22 +15,9 @@ const PhotoLoader = ({ userId, currentStep }) => {
       method: "POST",
       body: form_data,
     };
-    fetch("http://localhost:5000/api/product/product")
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw Error(response.statusText);
-        }
-      })
-      .then((response) => setPhotoArray(response))
-      .catch((error) => {
-        console.log("Error when retrieving images:", error);
-      });
-    //fetch de les imatges del user
-    // .then(respobse => setPhotoArray([respose])) 
   }; 
   console.log(photoArray);
+  
   const MAX_ALLOWED = 6;
   const photosAllowed = MAX_ALLOWED - photoArray.length;
   const content = [];

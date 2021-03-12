@@ -1,9 +1,7 @@
 import React from 'react';
 import pablo from "../../assets/pablo.png";
-/* import PhotoLoader from '../photoLoader/photoLoader'; */
-
-const ProductImages = ({ formData, setFormData, action }) => {
-
+import PhotoLoader from '../photoLoader/photoLoader'; 
+const ProductImages = ({ descData, setDescData, secondAction}) => {
     return (
         <div className="main_form_container">
             <div className="form_container">
@@ -21,14 +19,14 @@ const ProductImages = ({ formData, setFormData, action }) => {
                             rows="8"
                             type="text"
                             onChange={(e) =>
-                                setFormData({ ...formData, description: e.target.value })
+                                setDescData({ ...descData, description: e.target.value })
                             }
                         />
                         <div className="form_title2">
                             <h2>Pictures</h2>
                         </div>
-                        {/* <PhotoLoader /> */}
-                        <button className="button_a" onClick={action}>
+                        <PhotoLoader />
+                        <button className="button_a" onClick={secondAction}>
                             <h1 className="button_content">Create Listing</h1>
                         </button>
                     </div>
