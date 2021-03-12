@@ -31,6 +31,8 @@
 
 .photoCard__container {
     width: 100%;
+    height: 128px;
+    width: 128px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;   
