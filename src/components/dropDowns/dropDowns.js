@@ -6,7 +6,7 @@ import "./dropDowns.css";
 import Slider from "../../components/slider/slider";
 
 
-const DropDowns = () => {
+const DropDowns = ({products, setProducts}) => {
 
   const [selcategory, setSelcategory] = useState([]);
 
@@ -40,9 +40,6 @@ const DropDowns = () => {
       .then((json) => setSubcategories(json));
   }, [selcategory]);
 
-
-  const [products, setProducts] = useState([]);
-
   useEffect(() => {
     fetch(`http://localhost:5000/api/products`)
       .then((response) => response.json())
@@ -60,9 +57,6 @@ const DropDowns = () => {
       .then((response) => response.json())
       .then((json) => setProducts(json));
   }, [selsubcategory]);
-
-
-
 
   return (
     <>
@@ -91,14 +85,13 @@ const DropDowns = () => {
           <div className="dropdown">
             <Slider
               className="slider__container"
-              products={products}/>
+              products={products} />
           </div>
         </div>
       </div>
 
 
       <div className="productSelection_container">
-
         {products.map(product => (
           <ProductCard
             productId={product._id}

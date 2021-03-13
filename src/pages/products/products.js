@@ -6,12 +6,11 @@ import DropDowns from "../../components/dropDowns/dropDowns";
 
 
 
-export const Products = () => {
+export const Products = ({products, setProducts}) => {
 
     return (
         <>
-            <DropDowns />
-            {/* <ProductSelection className="productos__container" /> */}
+            <DropDowns products={products} setProducts={setProducts} />
             <ShowMore />
         </>
     )

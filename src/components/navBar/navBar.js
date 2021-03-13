@@ -8,7 +8,7 @@ import Dropdown from "../../components/dropDown/dropDown";
 import Button from "../button/Button";
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout, products, setProducts }) => {
+const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout, setProducts }) => {
 
   /* Search by name and description for products */
 
