@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./home.css";
 import Postit from "../../components/postit/postit";
 import Icon from "../../components/icon/icon";
@@ -6,8 +6,8 @@ import ProductSelection from "../../components/productSelection/productSelection
 import ShowMore from "../../components/showMore/showMore";
 import Carrousel from "../../components/carousel/carousel";
 
-export const Home = () => {
-  
+export const Home = ({products}) => {
+
   return (
     <div>
       <Carrousel />
@@ -18,7 +18,9 @@ export const Home = () => {
         button="Shop now"
       />
       <Icon />
-      <ProductSelection />
+      <ProductSelection
+        products={products}
+      />
       <ShowMore />
     </div>
   );
