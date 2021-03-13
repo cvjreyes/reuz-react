@@ -12,21 +12,22 @@ const UpLoadProduct = () => {
     /* Controls the fetch heading towards MongoDB at API endpoint */
     //formData : combo for the inputs
     const [formData, setFormData] = useState({
+
         name: undefined,
         price: undefined,
         discount: undefined,
         address: undefined,
     });
     //Body: conforms the key/values to be send to MongoDB
-    const firstbody = {
+    const body = {
         name: formData.name,
         price: formData.price,
         discount: formData.discount,
         address: formData.address,
     };
-    console.log(firstbody);
+    console.log(body);
     //Executes the fetch function at the end of the form process
-    const [productId, setProductId]= useState();
+    const [productId, setProductId] = useState();
 
     const handleCreate = () => {
         const options = {
@@ -34,14 +35,14 @@ const UpLoadProduct = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            firstbody: JSON.stringify(firstbody),
+            body: JSON.stringify(body),
         };
         fetch('http://localhost:5000/api/products', options)
-        .then (response => response.json())
-        .then (json => console.log(json))
-        //.then (json => setProductId(json))
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .then(json => setProductId(json))
         console.log("Product created");
-    
+
     }
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
@@ -53,6 +54,7 @@ const UpLoadProduct = () => {
     }
     /*//////////////////////////////////*/
     const [descData, setDescData] = useState({
+
         description: undefined
     });
     //Body: conforms the key/values to be send to MongoDB
@@ -65,17 +67,17 @@ const UpLoadProduct = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(secondbody),
+            secondbody: JSON.stringify(secondbody),
         };
-        fetch(`http://localhost:5000/api/categories/products/${productId}`, options);
+        fetch(`http://localhost:5000/api/products/${productId}`, options);
         console.log("Product created");
     }
-    const [photoArray, setPhotoArray] = useState([]);
+    /*const [photoArray, setPhotoArray] = useState([]);
     //Body: conforms the key/values to be send to MongoDB
     const photoLoad = {
         photoArray: photoArray
     };
-    const uploadPhotos= () => {
+    const uploadPhotos = () => {
         const options = {
             method: "POST",
             headers: {
@@ -86,39 +88,28 @@ const UpLoadProduct = () => {
         fetch(`http://localhost:5000/api/photos/${productId}`, options);
         console.log("Photo uploaded");
 
-    };
-    return ( 
-        <div > 
+    };*/
+
+    
+    return (
+        <div >
             {
-            visibleForm === "first" &&
-            <
-            ProductDetails
-            formData = {
-                formData
+                visibleForm === "first" &&
+                <ProductDetails
+                    formData={formData}
+                    setFormData={setFormData}                    
+                    action={handleCreateNext}
+                />
+            } 
+            {
+                visibleForm === "second" &&
+                <ProductImages
+                    descData={descData}
+                    setDescData={setDescData}
+                    secondAction={updateDescription}
+                />
             }
-            setFormData = {
-                setFormData
-            }
-            action = {
-                handleCreateNext
-            }
-            />
-        } {
-            visibleForm === "second" &&
-                <
-                ProductImages
-            photoArray = {
-                photoArray
-            }
-            setPhotoArray = {
-                setPhotoArray
-            }
-            secondAction = {
-                uploadPhotos
-            }
-            />
-        }
-         </div>
+        </div>
     )
 }
 export default UpLoadProduct;
