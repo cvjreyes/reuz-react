@@ -89,37 +89,17 @@ const UpLoadProduct = () => {
         console.log("Photo uploaded");
 
     };
-    return ( <
-        div > {
-            visibleForm === "first" &&
-            <
-            ProductDetails
-            formData = {
-                formData
-            }
-            setFormData = {
-                setFormData
-            }
-            action = {
-                handleCreateNext
-            }
-            />
-        } {
-            visibleForm === "second" &&
-                <
-                ProductImages
-            photoArray = {
-                photoArray
-            }
-            setPhotoArray = {
-                setPhotoArray
-            }
-            secondAction = {
-                uploadPhotos
-            }
-            />
-        } <
-        /div>
+    return ( <div> {visibleForm === "first" &&
+            <ProductDetails
+            formData = {formData}
+            setFormData = {setFormData}
+            action = {handleCreateNext}/>
+        } {visibleForm === "second" &&
+        <ProductImages
+            photoArray = {photoArray}
+            setPhotoArray = {setPhotoArray}
+            secondAction = {uploadPhotos}/>
+        } </div>
     )
 }
 export default UpLoadProduct;
