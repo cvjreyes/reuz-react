@@ -17,6 +17,10 @@ const UpLoadProduct = () => {
         price: undefined,
         discount: undefined,
         address: undefined,
+        subcategories_id: undefined,
+        category_id: undefined,
+        description: undefined,
+        
     });
     //Body: conforms the key/values to be send to MongoDB
     const body = {
@@ -24,6 +28,9 @@ const UpLoadProduct = () => {
         price: formData.price,
         discount: formData.discount,
         address: formData.address,
+        subcategories_id: formData.subcategories_id,
+        category_id: formData.category_id,
+        description: formData.description,
     };
     console.log(body);
     //Executes the fetch function at the end of the form process
@@ -41,7 +48,9 @@ const UpLoadProduct = () => {
             .then(response => response.json())
             .then(json => console.log(json))
             .then(json => setProductId(json))
+        
         console.log("Product created");
+    
 
     }
     const [visibleForm, setVisibleForm] = useState("first")
@@ -59,8 +68,11 @@ const UpLoadProduct = () => {
     });
     //Body: conforms the key/values to be send to MongoDB
     const secondbody = {
-        description: descData.description
+        description: descData.description,
+      //  id: productId
     };
+
+
     const updateDescription = () => {
         const options = {
             method: "PUT",
@@ -69,8 +81,13 @@ const UpLoadProduct = () => {
             },
             secondbody: JSON.stringify(secondbody),
         };
-        fetch(`http://localhost:5000/api/products/${productId}`, options);
-        console.log("Product created");
+        fetch(`http://localhost:5000/api/categories/products/${productId}/products`, options)
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .then(json => setDescData(json.productId))
+        
+        //console.log("Product: " . $productId);
+        
     }
     /*const [photoArray, setPhotoArray] = useState([]);
     //Body: conforms the key/values to be send to MongoDB
