@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./home.css";
 import Postit from "../../components/postit/postit";
 import Icon from "../../components/icon/icon";
@@ -7,8 +7,8 @@ import ShowMore from "../../components/showMore/showMore";
 import Carrousel from "../../components/carousel/carousel";
 import UploadProduct from '../formProduct/uploadProduct';
 
-export const Home = () => {
-  
+export const Home = ({products}) => {
+
   return (
     <div>
       <Carrousel />
@@ -21,6 +21,9 @@ export const Home = () => {
       <Icon />
       <ProductSelection />
       <UploadProduct />
+      <ProductSelection
+        products={products}
+      />
       <ShowMore />
     </div>
   );

@@ -61,7 +61,15 @@ function App() {
 
   useEffect(() => {
     checkUserLoggedIn();
-  }, [])
+  }, []);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/products")
+      .then((response) => response.json())
+      .then((json) => setProducts(json));
+  }, []);
 
   return (
     <div className="app__body">
@@ -71,16 +79,22 @@ function App() {
           handleSignupModal={handleSignupModal}
           handleLoginModal={handleLoginModal}
           handleLogout={handleLogout}
+          products={products}
+          setProducts={setProducts}
         />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home
+              products={products}
+            />
           </Route>
           <Route exact path="/products">
-            <Products />
+            <Products
+              products={products}
+              setProducts={setProducts} />
           </Route>
           <Route exact path="/products/:id">
-            <ProductPage user={loggedUser}/>
+            <ProductPage user={loggedUser} />
           </Route>
           <Route exact path="/yourListings">
             <ManagePage user={loggedUser} />
