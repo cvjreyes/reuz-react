@@ -3,9 +3,15 @@ name: Reuz React
 on: [push, pull_request]
 
 jobs:
+<<<<<<< HEAD
   BuiltAndRunTest:
 
     if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+=======
+  BuildAndRunTests:
+
+    if: github.event_name == 'push' && github.ref != 'refs/heads/master'
+>>>>>>> deployment
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,12 +31,17 @@ jobs:
       run: yarn install
 
     - name: Run the tests and generate coverage report
+<<<<<<< HEAD
       run: yarn test --coverage
+=======
+      run: npm test
+>>>>>>> deployment
 
     - name: Build
       env:
         NODE_ENV: test
         CI: false
+<<<<<<< HEAD
       run: yarn build
 
   PublishToNetlify:
@@ -40,14 +51,39 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+=======
+      run: npm run build
+
+  PublishToNetlify:
+
+    # TODO: Uncomment when done
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/deployment'
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+>>>>>>> deployment
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+<<<<<<< HEAD
       - run: yarn install
       - run: yarn run build --if-present
         env:
           CI: false
+=======
+
+      - run: npm install
+      - run: npm run build --if-present
+        env:
+          CI: false
+
+>>>>>>> deployment
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
         env:
