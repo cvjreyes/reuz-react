@@ -81,7 +81,7 @@ const UpLoadProduct = () => {
             },
             secondbody: JSON.stringify(secondbody),
         };
-        fetch(`http://localhost:5000/api/categories/products/${productId}/products`, options)
+        fetch(`http://localhost:5000/api/categories/products/${productId}`, options)
             .then(response => response.json())
             .then(json => console.log(json))
             .then(json => setDescData(json.productId))
