@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 import ProductCard from "../productCard/productCard";
 import "./dropDowns.css";
 
-import Slider from "../../components/slider/slider";
 
 
-const DropDowns = () => {
+const DropDowns2 = () => {
 
   const [selcategory, setSelcategory] = useState([]);
 
@@ -99,5 +98,5 @@ const DropDowns = () => {
 };
 
 
-export default DropDowns;
+export default DropDowns2;
 
