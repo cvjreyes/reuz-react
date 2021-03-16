@@ -46,8 +46,10 @@ const UpLoadProduct = () => {
         };
         fetch('http://localhost:5000/api/products', options)
             .then(response => response.json())
-            .then(json => console.log(json))
-            .then(json => setProductId(json))
+            .then(json => {
+                console.log("Producto creado!", json);
+                setProductId(json);
+            });
         
         console.log("Product created");
     
@@ -79,9 +81,9 @@ const UpLoadProduct = () => {
             headers: {
                 "Content-Type": "application/json",
             },
-            secondbody: JSON.stringify(secondbody),
+            body: JSON.stringify(secondbody),
         };
-        fetch(`http://localhost:5000/api/categories/products/${productId}`, options)
+        fetch(`http://localhost:5000/api/products/${productId._id}`, options)
             .then(response => response.json())
             .then(json => console.log(json))
             .then(json => setDescData(json.productId))
@@ -89,7 +91,7 @@ const UpLoadProduct = () => {
         //console.log("Product: " . $productId);
         
     }
-    /*const [photoArray, setPhotoArray] = useState([]);
+    const [photoArray, setPhotoArray] = useState([]);
     //Body: conforms the key/values to be send to MongoDB
     const photoLoad = {
         photoArray: photoArray
@@ -102,10 +104,19 @@ const UpLoadProduct = () => {
             },
             body: JSON.stringify(photoLoad)
         };
-        fetch(`http://localhost:5000/api/photos/${productId}`, options);
+        fetch(`http://localhost:5000/api/photos/${productId._Id}`, options)
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .then(json => setPhotoArray(json.productId))
+
         console.log("Photo uploaded");
 
-    };*/
+    };
+
+    const handleUpLoad = () => {
+        updateDescription()
+        uploadPhotos()
+    }
 
     
     return (
@@ -120,10 +131,10 @@ const UpLoadProduct = () => {
             } 
             {
                 visibleForm === "second" &&
-                <ProductImages
+                <ProductImages 
                     descData={descData}
                     setDescData={setDescData}
-                    secondAction={updateDescription}
+                    secondAction={handleUpLoad}
                 />
             }
         </div>
