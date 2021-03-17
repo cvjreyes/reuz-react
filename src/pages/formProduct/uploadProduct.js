@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {
+    useState
+} from 'react';
 import ProductDetails from "../../components/forms/productDetails";
 import ProductImages from "../../components/forms/productImages";
 import "./uploadProduct.css";
 import ListBody from 'antd/lib/transfer/ListBody';
 import PhotoLoader from "../../components/photoLoader/photoLoader";
-import uploadPicture from "../../assets/uploadPicture/uploadPicture.svg";
 const UpLoadProduct = () => {
     /* Controls the form to be rendered */
     /* Controls the fetch heading towards MongoDB at API endpoint */
@@ -66,7 +67,7 @@ const UpLoadProduct = () => {
     };
     const updateDescription = () => {
         const options = {
-              method: "PUT",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -76,52 +77,30 @@ const UpLoadProduct = () => {
             .then(response => response.json())
             .then(json => console.log(json))
             .then(json => setDescData(json.productId))
+        //console.log("Product: " . $productId);
     }
-    const UploadPhotos = ({ userId, currentStep }) => {
-        const [photoArray, setPhotoArray] = useState([]);
-        const handleImageUpload = (e) => {
-          /* TODO: DEFINE PUT/POST ACTION AGAINST MONGODB */
-          let form_data = new FormData(); // https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/FormData
-          form_data.append("updated", new Date());
-          form_data.append("photo", e.target.files[0]);
-          form_data.append("signup_step", currentStep + 1);
-          form_data.append("signup_completed", true);
-          const options = {
+    const [photoArray, setPhotoArray] = useState([]);
+    //Body: conforms the key/values to be send to MongoDB
+    const photoLoad = {
+        photoArray: photoArray
+    };
+    const uploadPhotos = () => {
+        const options = {
             method: "POST",
-            body: form_data,
-          };
-        }; 
-        console.log(photoArray);
-        
-        const MAX_ALLOWED = 6;
-        const photosAllowed = MAX_ALLOWED - photoArray.length;
-        const content = [];
-        // const photo = `data:${photo.mimeType};base64,${photo.image}`;
-        for (var i = 0; i < photosAllowed; i++) {
-          content.push(
-            <div className="photoloader__container">
-              <div className= "photoCard__container"  src={uploadPicture} alt="upload_Picture" />
-              <form
-                id="photo"
-                encType="multipart/form-data"
-                className="form__container"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                <input
-                  type="file"
-                  name="photos"
-                  id="photos"
-                  onChange={handleImageUpload}
-                />
-              </form>
-            </div>
-          );
-        }}
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(photoLoad)
+        };
+        fetch(`http://localhost:5000/api/photos/${productId._id}`, options)
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .then(json => setPhotoArray(json.productId))
+        console.log("Photo uploaded");
+    };
     const handleUpLoad = () => {
         updateDescription()
-        UploadPhotos()
+        uploadPhotos()
     }
     return (
         <div >
@@ -135,7 +114,7 @@ const UpLoadProduct = () => {
             } 
             {
                 visibleForm === "second" &&
-                <ProductImages
+                <ProductImages 
                     descData={descData}
                     setDescData={setDescData}
                     secondAction={handleUpLoad}

@@ -1,5 +1,7 @@
 import { React, useState } from "react";
 import uploadPicture from "../../assets/uploadPicture/uploadPicture.svg";
+import vectorAdd from "../../assets/uploadPicture/vectorAdd.svg";
+
 import "./photoLoader.css";
 
 const PhotoLoader = ({ userId, currentStep }) => {
@@ -12,13 +14,26 @@ const PhotoLoader = ({ userId, currentStep }) => {
     form_data.append("signup_step", currentStep + 1);
     form_data.append("signup_completed", true);
     const options = {
-      method: "POST",
+      method: "PUT",
       body: form_data,
     };
-  }; 
+    fetch("http://localhost:3001/api/users/" + userId + "/photos", options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw Error(response.statusText);
+        }
+      })
+      .then((response) => setPhotoArray(response))
+      .catch((error) => {
+        console.log("Error when retrieving images:", error);
+      });
+    //fetch de les imatges del user
+    // .then(respobse => setPhotoArray([respose]))
+  };
   console.log(photoArray);
-  
-  const MAX_ALLOWED = 6;
+  const MAX_ALLOWED = 5;
   const photosAllowed = MAX_ALLOWED - photoArray.length;
   const content = [];
   // const photo = `data:${photo.mimeType};base64,${photo.image}`;
@@ -26,7 +41,9 @@ const PhotoLoader = ({ userId, currentStep }) => {
     content.push(
       <div className="photoloader__container">
         <div className= "photoCard__container"  src={uploadPicture} alt="upload_Picture" />
-        <form
+        <img className= "vector_Add" src={vectorAdd} alt="icon_add" />
+        <span className= "upload_photo">Upload</span>
+        <form 
           id="photo"
           encType="multipart/form-data"
           className="form__container"
@@ -34,7 +51,7 @@ const PhotoLoader = ({ userId, currentStep }) => {
             e.preventDefault();
           }}
         >
-          <input
+          <input 
             type="file"
             name="photos"
             id="photos"
@@ -43,6 +60,7 @@ const PhotoLoader = ({ userId, currentStep }) => {
         </form>
       </div>
     );
+
   }
   return (
     <>

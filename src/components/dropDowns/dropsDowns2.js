@@ -5,21 +5,23 @@ import "./dropDowns.css";
 
 
 
-const DropDowns2 = () => {
+const DropDowns2 = ({onChangeCategory, onChangeSubcategory}) => {
 
   const [selcategory, setSelcategory] = useState([]);
 
-  const handlerLoadSubcategories = function (e) {
+  const handlerSelectCategory= function (e) {
     const category = e.target.value;
     setSelcategory(category);
+    onChangeCategory(category);
     let resetDropDown = document.getElementById("selSubcategories");
     resetDropDown.selectedIndex = 0;
   }
 
   const [selsubcategory, setSelsubcategory] = useState([]);
 
-  const handlerLoadProducts = function (e) {
+  const handlerSelectSubcateogry = function (e) {
     const subcategory = e.target.value;
+    onChangeSubcategory(subcategory);
     setSelsubcategory(subcategory);
   }
 
@@ -42,32 +44,11 @@ const DropDowns2 = () => {
   }, [selcategory]);
 
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/products`)
-      .then((response) => response.json())
-      .then((json) => setProducts(json));
-  }, [selcategory]);
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/categories/${selcategory}/products`)
-      .then((response) => response.json())
-      .then((json) => setProducts(json));
-  }, [selcategory]);
-
-  useEffect(() => {
-    console.log(`http://localhost:5000/api/categories/${selcategory}/subcategories/${selsubcategory}/products`);
-    fetch(`http://localhost:5000/api/categories/${selcategory}/subcategories/${selsubcategory}/products`)
-      .then((response) => response.json())
-      .then((json) => setProducts(json));
-  }, [selsubcategory]);
-
   return (
     <>
       <div className="dropDowns-container">
         <div className="dropdown">
-          <select name="categories" id="selCategories" onClick={handlerLoadSubcategories}>
+          <select name="categories" id="selCategories" onChange={handlerSelectCategory}>
             <option>Categories...</option>
             {categories.map((category) => (
               <option value={category._id}>{category.name}
@@ -77,7 +58,7 @@ const DropDowns2 = () => {
         </div>
 
         <div className="dropdown">
-          <select name="subcategories" id="selSubcategories" onClick={handlerLoadProducts}>
+          <select name="subcategories" id="selSubcategories" onChange={handlerSelectSubcateogry}>
             <option>Subcategories...</option>
             {subcategories.map(subcategory => (
               <option value={subcategory._id}>{subcategory.name}
