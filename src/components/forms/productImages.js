@@ -1,7 +1,12 @@
 import React from 'react';
 import pablo from "../../assets/pablo.png";
 import PhotoLoader from '../photoLoader/photoLoader'; 
+import { useParams } from 'react-router';
 const ProductImages = ({ descData, setDescData, secondAction}) => {
+
+    const params = useParams();
+    const productId = params.id;
+
     return (
         <div className="main_form_container">
             <div className="form_container">
@@ -25,7 +30,7 @@ const ProductImages = ({ descData, setDescData, secondAction}) => {
                         <div className="form_title2">
                             <h2>Pictures</h2>
                         </div>
-                        <PhotoLoader />
+                        <PhotoLoader productId={productId} />
                         <button className="button_a" onClick={secondAction}>
                             <h1 className="button_content">Create Listing</h1>
                         </button>

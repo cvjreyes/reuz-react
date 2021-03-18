@@ -104,7 +104,7 @@ const UpLoadProduct = () => {
             },
             body: JSON.stringify(photoLoad)
         };
-        fetch(`http://localhost:5000/api/photos/${productId._Id}`, options)
+        fetch(`http://localhost:5000/api/photos/${productId._id}`, options)
         .then(response => response.json())
         .then(json => console.log(json))
         .then(json => setPhotoArray(json.productId))
