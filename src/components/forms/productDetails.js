@@ -52,7 +52,7 @@ const ProductDetails = ({ formData, setFormData, action }) => {
                         <div className="form_title2">
                             <h2>Category</h2>
                         </div>
-                        <DropDowns2 />
+                        <DropDowns2 onChangeCategory={(category) => setFormData({...formData, category_id: category})} onChangeSubcategory={(subcategory) => setFormData({...formData, subcategories_id: subcategory})} />
                         <button className="button_a" type="submit" onClick={action}>
                             <h1 className="button_content">Next</h1>
                         </button>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import uploadPicture from "../../assets/uploadPicture/uploadPicture.svg";
-import deletePicture from "../../assets/delete.svg";
+import deletePicture from "../../assets/vector.svg";
 import "./photoLoader.css";
 const PhotoLoader = ({ productId, currentStep }) => {
   const [photoArray, setPhotoArray] = useState([]);
@@ -19,7 +19,7 @@ const PhotoLoader = ({ productId, currentStep }) => {
     };
 
     
-   fetch(`http://localhost:5000/api/photo/${productId}`, options)
+   fetch(`http://localhost:5000/api/photo`, options)
     
       .then((response) => {
         if (response.ok) {
@@ -50,6 +50,7 @@ const PhotoLoader = ({ productId, currentStep }) => {
           return response.json();
         } else {
           throw Error(response.statusText);
+          
         }
       })
       .then((res) => setPhotoArray(res))
