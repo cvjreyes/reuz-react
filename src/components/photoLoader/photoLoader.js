@@ -17,7 +17,10 @@ const PhotoLoader = ({ productId, currentStep }) => {
       method: "POST",
       body: form_data,
     };
-    fetch(`http://localhost:5000/api/photo/${productId._id}`, options)
+
+    
+   fetch(`http://localhost:5000/api/photo/${productId}`, options)
+    
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -32,6 +35,8 @@ const PhotoLoader = ({ productId, currentStep }) => {
       .catch((error) => {
         console.log("Error when retrieving images:", error);
       });
+
+      
     //fetch de les imatges del user
     // .then(respobse => setPhotoArray([respose]))
   };
