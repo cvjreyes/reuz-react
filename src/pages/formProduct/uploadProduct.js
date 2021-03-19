@@ -25,13 +25,12 @@ const UpLoadProduct = () => {
         price: formData.price,
         discount: formData.discount,
         address: formData.address,
-        subcategories_id: formData.subcategories_id,
-        category_id: formData.category_id,
+        product_subcategory_id: formData.subcategories_id,
+        product_category_id: formData.category_id,
         description: formData.description,
     };
-    console.log(body);
     //Executes the fetch function at the end of the form process
-    const [productId, setProductId] = useState();
+    const [productCreated, setProductCreated] = useState();
     const handleCreate = () => {
         const options = {
             method: "POST",
@@ -44,9 +43,8 @@ const UpLoadProduct = () => {
             .then(response => response.json())
             .then(json => {
                 console.log("Producto creado!", json);
-                setProductId(json);
+                setProductCreated(json);
             });
-        console.log("Product created");
     }
     const [visibleForm, setVisibleForm] = useState("first")
     const handlevisibleForm = () => {
@@ -56,68 +54,22 @@ const UpLoadProduct = () => {
         handleCreate()
         handlevisibleForm()
     }
-    /*//////////////////////////////////*/
-    const [descData, setDescData] = useState({
-        description: undefined
-    });
-    //Body: conforms the key/values to be send to MongoDB
-    const secondbody = {
-        description: descData.description,
-      //  id: productId
-    };
-    const updateDescription = () => {
-        const options = {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(secondbody),
-        };
-        fetch(`http://localhost:5000/api/products/${productId._id}`, options)
-            .then(response => response.json())
-            .then(json => console.log(json))
-            .then(json => setDescData(json.productId))
-        //console.log("Product: " . $productId);
-    }
-    const [photoArray, setPhotoArray] = useState([]);
-    //Body: conforms the key/values to be send to MongoDB
-    const photoLoad = {
-        photoArray: photoArray
-    };
-    const uploadPhotos = () => {
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(photoLoad)
-        };
-        fetch(`http://localhost:5000/api/photos/${productId._id}`, options)
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .then(json => setPhotoArray(json.productId))
-        console.log("Photo uploaded");
-    };
-    const handleUpLoad = () => {
-        updateDescription()
-        uploadPhotos()
-    }
+   
+    
     return (
         <div >
             {
                 visibleForm === "first" &&
                 <ProductDetails
                     formData={formData}
-                    setFormData={setFormData}                    
+                    setFormData={setFormData}
                     action={handleCreateNext}
                 />
-            } 
+            }
             {
-                visibleForm === "second" &&
-                <ProductImages 
-                    descData={descData}
-                    setDescData={setDescData}
-                    secondAction={handleUpLoad}
+                visibleForm === "second" && productCreated &&
+                <ProductImages
+                    productCreated={productCreated}
                 />
             }
         </div>

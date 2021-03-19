@@ -9,17 +9,15 @@ const PhotoLoader = ({ productId, currentStep }) => {
     let form_data = new FormData(); // https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/FormData
     form_data.append("updated", new Date());
     form_data.append("photo", e.target.files[0]);
-    form_data.append("signup_step", currentStep + 1);
-    form_data.append("signup_completed", true);
-;
+   
+
 
     const options = {
       method: "POST",
       body: form_data,
     };
 
-    
-   fetch(`http://localhost:5000/api/photo`, options)
+   fetch(`http://localhost:5000/api/photos/${productId}/photos`, options)
     
       .then((response) => {
         if (response.ok) {
@@ -30,7 +28,6 @@ const PhotoLoader = ({ productId, currentStep }) => {
       })
       .then((response) => {
         setPhotoArray(response)
-        console.log(response)
       })
       .catch((error) => {
         console.log("Error when retrieving images:", error);
@@ -44,7 +41,7 @@ const PhotoLoader = ({ productId, currentStep }) => {
     const optionsToDelete = {
       method: "DELETE",
     }
-    fetch(`http://localhost:5000/api/photo/${productId._id} + photo_id`, optionsToDelete)
+    fetch(`http://localhost:5000/api/photos/${productId._id}/photos/ + ${photo_id}`, optionsToDelete)
       .then((response) => {
         if (response.ok) {
           return response.json();
