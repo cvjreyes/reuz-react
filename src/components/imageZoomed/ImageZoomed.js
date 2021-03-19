@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useState } from "react";
 import './ImageZoomed.css';
 import CloseButton from "../../assets/close.svg";
 import ellipse4 from "../../assets/Ellipse4.png";
@@ -12,6 +12,25 @@ const ImageZoomed = ({ visibility, setVisibility, content }) => {
   const handleClose = () => {
     setVisibility(false)
   }
+
+  /* Functions to control and perfom image view */
+
+  const [currentImage, setCurrentImage] = useState(1)
+  const imageLength = 5
+
+  const nextImage = () => {
+    if (currentImage < imageLength) {
+      setCurrentImage(currentImage + 1)
+    }
+  }
+
+  const prevImage = () => {
+    if (currentImage > 1) {
+      setCurrentImage(currentImage - 1)
+    }
+
+  }
+
 
   return (
     <div className={showHideClassName}>
@@ -28,6 +47,9 @@ const ImageZoomed = ({ visibility, setVisibility, content }) => {
                 <img alt="adelante" src={ellipse5} className="button_img_container"></img>
               </button>
             </div>
+          </div>
+          <div className="image_pagination_container">
+            <p>Image {currentImage} / {imageLength} </p>
           </div>
           <div className="close_button_container">
             <img src={CloseButton} onClick={handleClose} />
