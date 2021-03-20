@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pablo from "../../assets/pablo.png";
-import PhotoLoader from '../photoLoader/photoLoader'; 
-const ProductImages = ({ descData, setDescData, secondAction}) => {
+import PhotoLoader from '../photoLoader/photoLoader';
+const ProductImages = ({ productId }) => {
+
+    /* console.log(productCreated) */
+
+    /*//////////////////////////////////*/
+    const [descData, setDescData] = useState({
+        description: undefined
+    });
+
+    //Body: conforms the key/values to be send to MongoDB
+    const secondbody = {
+        description: descData.description,
+        //  id: productId
+    };
+
+    //añadir fetch de imagenes y de descripcion
+    const updateDescription = () => {
+        const options = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(secondbody),
+        };
+        fetch(`http://localhost:5000/api/products/${productId}`, options)
+        /* 
+        .then(response => response.json())
+        .then(json => console.log(json))
+        .then(json => setDescData(json.productId))
+        console.log("Product: " . $productId);
+        */
+    }
+
     return (
         <div className="main_form_container">
             <div className="form_container">
@@ -25,8 +57,10 @@ const ProductImages = ({ descData, setDescData, secondAction}) => {
                         <div className="form_title2">
                             <h2>Pictures</h2>
                         </div>
-                        <PhotoLoader />
-                        <button className="button_a" onClick={secondAction}>
+                        <PhotoLoader
+                            productId={productId}
+                        />
+                        <button className="button_a" onClick={updateDescription}>
                             <h1 className="button_content">Create Listing</h1>
                         </button>
                     </div>

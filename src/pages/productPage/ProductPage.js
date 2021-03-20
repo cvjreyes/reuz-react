@@ -50,16 +50,16 @@ const ProductPage = ({ user }) => {
             const opencageURL = `https://api.opencagedata.com/geocode/v1/json?q=${opencageAddress}&key=${opencageToken}&pretty=1&limit=1&language=es&countrycode=es`;
             const encodedURL = encodeURI(opencageURL);
             console.log(encodedURL);
-
+            
             fetch(encodedURL)
-                .then((response) => response.json())
-                .then((json) => {
-                    console.log(json)
-                    const results = json.results[0].geometry
-                    const geolocatedAdress = [results.lat, results.lng]
-                    setProductPosition(geolocatedAdress);
-                    console.log(geolocatedAdress)
-                });
+            .then((response) => response.json())
+            .then((json) => {
+                console.log(json)
+                const results = json.results[0].geometry
+                const geolocatedAdress = [results.lat, results.lng]
+                setProductPosition(geolocatedAdress);
+                console.log(geolocatedAdress) 
+            });
         }
 
     }, [productInfo])
@@ -178,10 +178,7 @@ const ProductPage = ({ user }) => {
                         <div className="productPage_info_area">
                             <div className="productPage_info_productName">
                                 <h2 className="productPage_info_productTitle">{productInfo.name}</h2>
-                                {productInfo.product_category_id
-                                    ? <p className="productPage_info_breadcrumbs">Home {'>'} {productInfo.product_category_id.name} {'>'} {productInfo.product_subcategory_id.name}</p>
-                                    : <p className="productPage_info_breadcrumbs">Home {'>'} Undefined category</p>
-                                }
+                                <p className="productPage_info_breadcrumbs">Home {'>'} {productInfo.product_category_id.name} {'>'} {productInfo.product_subcategory_id.name}</p>
                                 <div className="productPage_info_divider" />
                             </div>
                             <div className="productPage_info_productDescription">
