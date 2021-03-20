@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./navBar.css";
 import Logo from "../../assets/navBar/logo.png";
 import vector from "../../assets/navBar/Vector.svg";
@@ -8,17 +8,38 @@ import Dropdown from "../../components/dropDown/dropDown";
 import Button from "../button/Button";
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout }) => {
+const NavBar = ({ knownUser, handleSignupModal, handleLoginModal, handleLogout, setProducts }) => {
+
+  /* Search by name and description for products */
 
   const [searchInput, setSearchInput] = useState('');
 
-  /*  const filterProductByName = () => {
-     if(searchInput.length>5){
- 
-     }
-     console.log(searchInput)
-   } */
+  useEffect(() => {
+    const body = {
+      name: searchInput,
+      description: searchInput
+    }
 
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    };
+
+    if (searchInput.length > 4) {
+      /* If input is longer than four characters proceed with search */
+      fetch("http://localhost:5000/api/products/search", options)
+        .then((response) => response.json())
+        .then((json) => setProducts(json))
+    } else {
+      /* Else, if less than four characters get all products and render them */
+      fetch("http://localhost:5000/api/products")
+        .then((response) => response.json())
+        .then((json) => setProducts(json));
+    }
+  }, [searchInput])
 
   return (
     <div className="navBar">

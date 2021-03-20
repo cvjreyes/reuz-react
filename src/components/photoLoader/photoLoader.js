@@ -1,24 +1,34 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import uploadPicture from "../../assets/uploadPicture/uploadPicture.svg";
 import deletePicture from "../../assets/vector.svg";
 import "./photoLoader.css";
-const PhotoLoader = ({ productId, currentStep }) => {
-  const [photoArray, setPhotoArray] = useState([]);
-  const handleImageUpload = (e) => {
-    /* TODO: DEFINE PUT/POST ACTION AGAINST MONGODB */
-    let form_data = new FormData(); // https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/FormData
-    form_data.append("updated", new Date());
-    form_data.append("photo", e.target.files[0]);
-   
+const PhotoLoader = ({ productId }) => {
 
+  const [photoArray, setPhotoArray] = useState([]);
+  console.log(photoArray)
+
+  const MAX_ALLOWED = 6;
+  const photosAllowed = MAX_ALLOWED - photoArray.length;
+  const content = [];
+  console.log(content)
+
+
+  const handleImageUpload = (e) => {
+    debugger;
+    console.log(e.target.files[0])
+
+    let form_data = new FormData(); // https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/FormData
+    form_data.append("photo_product_id",productId);
+    form_data.append("photo", e.target.files[0]);
+    form_data.append("created", new Date());
+    form_data.append("updated", new Date());
 
     const options = {
       method: "POST",
       body: form_data,
     };
 
-   fetch(`http://localhost:5000/api/photos/${productId}/photos`, options)
-    
+    fetch(`http://localhost:5000/api/photos/${productId}/photos`, options)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -27,36 +37,14 @@ const PhotoLoader = ({ productId, currentStep }) => {
         }
       })
       .then((response) => {
-        setPhotoArray(response)
+        setPhotoArray(...photoArray, response)
       })
       .catch((error) => {
         console.log("Error when retrieving images:", error);
       });
-
-      
-    //fetch de les imatges del user
-    // .then(respobse => setPhotoArray([respose]))
   };
-  const handleDeleteImage = (photo_id) => {
-    const optionsToDelete = {
-      method: "DELETE",
-    }
-    fetch(`http://localhost:5000/api/photos/${productId._id}/photos/ + ${photo_id}`, optionsToDelete)
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw Error(response.statusText);
-          
-        }
-      })
-      .then((res) => setPhotoArray(res))
-  }
-  const MAX_ALLOWED = 6;
-  const photosAllowed = MAX_ALLOWED - photoArray.length;
-  const content = [];
-  console.log(photoArray)
-  // const photo = `data:${photo.mimeType};base64,${photo.image}`;
+
+
   for (var i = 0; i < photosAllowed; i++) {
     content.push(
       <div className="photoloader__container">
@@ -66,6 +54,7 @@ const PhotoLoader = ({ productId, currentStep }) => {
           encType="multipart/form-data"
           className="form__container_of_photoloader"
           onSubmit={(e) => {
+            debugger;
             e.preventDefault();
           }}
         >
@@ -84,6 +73,7 @@ const PhotoLoader = ({ productId, currentStep }) => {
       </div>
     );
   }
+
   return (
     <>
       {photoArray &&
@@ -95,13 +85,6 @@ const PhotoLoader = ({ productId, currentStep }) => {
                 src={src}
                 alt="uploaded_image"
                 className="photoloader__photouploaded" />
-              <div className="deleteButton" onClick={() => handleDeleteImage(photo.id)}>
-                <img
-                  id="photo_aleady_uploaded"
-                  src={deletePicture}
-                  alt="delete_icon"
-                  className="deleteIcon2" />
-              </div>
             </div>
           );
         })}
@@ -109,4 +92,6 @@ const PhotoLoader = ({ productId, currentStep }) => {
     </>
   );
 };
+
+
 export default PhotoLoader;

@@ -1,12 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./slider.css";
 
-const Slider = () => {
+const Slider = ({ products }) => {
+
+  /* Calculate maximum and minimum price based on products loaded */
+  /*
+  const [maxPrice, setMaxPrice] = useState();
+  const [minPrice, setMinPrice] = useState();
+
+  useEffect(() => {
+    const prices = [];
+    products.map(product => {
+      prices.push(product.price)
+    })
+    setMinPrice(Math.min(...prices));
+    setMaxPrice(Math.max(...prices));
+  }, [products])
+
+  useEffect(() => {
+    setSliderData({ ...sliderData, priceStart: minPrice })
+    setSliderData({ ...sliderData, priceEnd: maxPrice })
+  }, [minPrice, maxPrice])
+  */
+
+
   const [sliderData, setSliderData] = useState({
     userPrice: 30,
     priceStart: 0,
     priceEnd: 10000
   });
+
+  console.log(sliderData.priceStart, sliderData.priceEnd)
 
   const getStyle = (current, max, reverse) => {
     const active = reverse ? "#e89f71" : "#D6D8E7";
@@ -31,7 +55,7 @@ const Slider = () => {
             min="0"
             max="4999"
             value={sliderData.priceStart}
-            style={getStyle(sliderData.priceStart, 4999)}
+            style={getStyle(sliderData.priceStart, 4999, false)}
             onChange={(e) =>
               setSliderData({
                 ...sliderData,
@@ -40,7 +64,6 @@ const Slider = () => {
             }
           />
         </div>
-
         <div className="slider__prices">
           <div className="value">
             <div className="buble_max_price">{sliderData.priceEnd + " €"} </div>

@@ -1,39 +1,85 @@
 .photoloader__container {
-    height: 128px;
-    width: 128px;
-    border-radius: 2px;
+    width: 266px;
+    height: 177px;
+    background-color: #EFF0F6;
+    border-radius: 20px;
     display: flex;
-    flex-direction: raw;
-    flex-wrap: wrap;
-    max-width: 50%;
-    gap: 21px;
-    background: #FAFAFA;
-    border: 1px dashed #D9D9D9;
-    box-sizing: border-box;
-    border-radius: 2px;    
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 38px;
 }
-
-
 .photoloader__photouploaded {
-    width: 128px;
-    height: 128px;
-    border-radius: 2px;
+    width: 50%;
+    height: 100%;
+    border-radius: 20px;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-clip: content-box;
     object-fit: cover;
-    margin-bottom: 38px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+    z-index: 2;
 }
-
-.photoCard__container {
-    width: 100%;
-    height: 128px;
+.photoloader__photouploaded__container{
     width: 128px;
+    height: 128px;
+    border-radius: 0px;
+    margin-bottom: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.photoloader__photouploaded__container:hover .deleteIcon2{
+    float: left;
+    display: block;
+}
+.deleteIcon2{
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 40%;
+    z-index: 3;
+    cursor: pointer;
+}
+.deleteIcon2:hover{
+    background-color: white;
+    opacity: 70%;
+    z-index: 3;
+    cursor: pointer;
+}
+.deleteButton{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    bottom: 170px;
+    left: 109px;
+    z-index: 20;
+}
+input#photos-input{
+    display: none;
+}
+.labelPhotos-input#labelPhotos-input{
+    opacity: 50%;
+    padding: 12px 12px 12px 12px !important;
+    border-radius: 5px !important;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;   
+    justify-content: center;
+    align-items: center;
+    background-color: white !important;
+    color: white !important;
+}
+.labelPhotos-input#labelPhotos-input:hover{
+    opacity: 100%;
+    background-color: white !important;
+}
+.form__container_of_photoloader{
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

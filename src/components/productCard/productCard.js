@@ -10,6 +10,12 @@ const ProductCard = ({ productId, urlImage, name, description, price, discount }
 
   const percentageDiscount = Math.round((discount/price)*100)
 
+  // Fetch pictures of the product
+
+  // fetch(`http://localhost:5000/api/photos/${productId}/photos`, options)
+
+
+  
   const [isOver, setIsOver] = useState(false);
 
   const history = useHistory();
