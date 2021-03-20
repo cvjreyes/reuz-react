@@ -9,6 +9,8 @@ import Home from "./pages/home/home";
 import Products from "./pages/products/products";
 import ProductPage from "./pages/productPage/ProductPage";
 import ManagePage from "./pages/managePage/managePage";
+import ChatRoom from "./pages/messaging/chatRoom.js";
+import { UserProvider } from "./contexts/userContext/userContext";
 
 /* Components */
 import NavBar from "./components/navBar/navBar";
@@ -71,6 +73,7 @@ function App() {
   }, []);
 
   return (
+    <UserProvider>
     <div className="app__body">
       <Router>
         <NavBar
@@ -91,6 +94,9 @@ function App() {
             <Products
               products={products}
               setProducts={setProducts} />
+          </Route>
+          <Route exact path="/messaging/:id">
+              <ChatRoom user={loggedUser}/>
           </Route>
           <Route exact path="/products/:id">
             <ProductPage user={loggedUser} />
@@ -117,6 +123,7 @@ function App() {
         />
       </Router>
     </div>
+    </UserProvider>
   );
 }
 export default App;

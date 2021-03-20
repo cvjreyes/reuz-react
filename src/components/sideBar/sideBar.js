@@ -39,9 +39,9 @@ const SideBar = () => {
             </div>
             <div className="div__sections">
                 {/* Pending to update link */}
-                <Link to='/yourListings' style={{ textDecoration: 'none' }}>
+                <Link to='/messaging/1' style={{ textDecoration: 'none' }}>
                     <img className="sections__container" src={messagingLogo} alt="messaging Logo" />
-                    <span className="sections__container">Messaging</span>
+                    <span className="sections__container" >Messaging</span>
                 </Link>
             </div>
             <div className="div__sections">
