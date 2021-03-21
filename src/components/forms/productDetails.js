@@ -1,6 +1,8 @@
+
 import React from 'react';
 import DropDowns2 from "../../components/dropDowns/dropsDowns2";
 import pablo from "../../assets/pablo.png";
+
 const ProductDetails = ({ formData, setFormData, action }) => {
     return (
         <div className="main_form_container">

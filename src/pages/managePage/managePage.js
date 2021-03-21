@@ -39,10 +39,7 @@ const ManagePage = ({ user }) => {
                 <Button name="Show more" />
             </div>
             <div>
-                <SideBar className="sidebar__container"></SideBar> </div>
-            <div>
-                <ShowMore />
-                <Footer />
+                 <Footer />
             </div>
         </div>
 
