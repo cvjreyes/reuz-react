@@ -1,21 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import pablo from "../../assets/pablo.png";
-import PhotoLoader from '../photoLoader/photoLoader';
-const ProductImages = ({ productId }) => {
-
-    /* console.log(productCreated) */
-
-    /*//////////////////////////////////*/
+import PhotoLoader from '../photoLoader/photoLoader'; 
+const ProductImages = ({ productCreated }) => {
+    console.log(productCreated)
+     /*//////////////////////////////////*/
     const [descData, setDescData] = useState({
         description: undefined
     });
-
     //Body: conforms the key/values to be send to MongoDB
     const secondbody = {
         description: descData.description,
         //  id: productId
     };
-
     //añadir fetch de imagenes y de descripcion
     const updateDescription = () => {
         const options = {
@@ -25,15 +21,17 @@ const ProductImages = ({ productId }) => {
             },
             body: JSON.stringify(secondbody),
         };
-        fetch(`http://localhost:5000/api/products/${productId}`, options)
-        /* 
-        .then(response => response.json())
-        .then(json => console.log(json))
-        .then(json => setDescData(json.productId))
-        console.log("Product: " . $productId);
-        */
+        fetch(`http://localhost:5000/api/products/${productCreated._id}`, options)
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .then(json => setDescData(json.productId))
+        //console.log("Product: " . $productId);
     }
-
+    const [photoArray, setPhotoArray] = useState([]);
+    //Body: conforms the key/values to be send to MongoDB
+    const photoLoad = {
+        photoArray: photoArray
+    };
     return (
         <div className="main_form_container">
             <div className="form_container">
@@ -57,9 +55,8 @@ const ProductImages = ({ productId }) => {
                         <div className="form_title2">
                             <h2>Pictures</h2>
                         </div>
-                        <PhotoLoader
-                            productId={productId}
-                        />
+                        <PhotoLoader productId={productCreated._id} 
+                         />
                         <button className="button_a" onClick={updateDescription}>
                             <h1 className="button_content">Create Listing</h1>
                         </button>

@@ -30,8 +30,7 @@ const UpLoadProduct = () => {
         description: formData.description,
     };
     //Executes the fetch function at the end of the form process
-    const [productId, setProductId] = useState();
-    
+    const [productCreated, setProductCreated] = useState();
     const handleCreate = () => {
         const options = {
             method: "POST",
@@ -44,8 +43,7 @@ const UpLoadProduct = () => {
             .then(response => response.json())
             .then(json => {
                 console.log("Producto creado!", json);
-                const productId = json._id;
-                setProductId(productId);
+                setProductCreated(json);
             });
     }
     const [visibleForm, setVisibleForm] = useState("first")
@@ -56,8 +54,6 @@ const UpLoadProduct = () => {
         handleCreate()
         handlevisibleForm()
     }
-   
-    
     return (
         <div >
             {
@@ -69,9 +65,9 @@ const UpLoadProduct = () => {
                 />
             }
             {
-                visibleForm === "second" &&
+                visibleForm === "second" && productCreated &&
                 <ProductImages
-                    productId={productId}
+                    productCreated={productCreated}
                 />
             }
         </div>
