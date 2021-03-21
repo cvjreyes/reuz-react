@@ -9,7 +9,7 @@ import Home from "./pages/home/home";
 import Products from "./pages/products/products";
 import ProductPage from "./pages/productPage/ProductPage";
 import ManagePage from "./pages/managePage/managePage";
-import ChatRoom from "./pages/messaging/chatRoom.js";
+import ChatRoom from "./components/messaging/chatRoom.js";
 import { UserProvider } from "./contexts/userContext/userContext";
 
 /* Components */
