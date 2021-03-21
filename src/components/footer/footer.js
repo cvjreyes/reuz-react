@@ -3,6 +3,7 @@ import logo from "../../assets/image10.svg";
 import socialLogo1 from "../../assets/footer/Instagram.svg";
 import socialLogo2 from "../../assets/footer/Twitter.svg";
 import socialLogo3 from "../../assets/footer/Youtube.svg";
+import { Link } from "react-router-dom" 
 
 const Footer = () => {
   const handleClick = () => {

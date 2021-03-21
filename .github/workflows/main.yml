@@ -1,10 +1,17 @@
-name: CI/CD
+name: Reuz React
 
 on: [push, pull_request]
 
 jobs:
-  build:
+<<<<<<< HEAD
+  BuiltAndRunTest:
 
+    if: github.event_name == 'push' && github.ref != 'refs/heads/main'
+=======
+  BuildAndRunTests:
+
+    if: github.event_name == 'push' && github.ref != 'refs/heads/master'
+>>>>>>> deployment
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,13 +28,67 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install dependencies
-      run: npm install
+      run: yarn install
 
     - name: Run the tests and generate coverage report
-      run: npm test --coverage
+<<<<<<< HEAD
+      run: yarn test --coverage
+=======
+      run: npm test
+>>>>>>> deployment
 
     - name: Build
       env:
         NODE_ENV: test
         CI: false
-      run: npm build
+<<<<<<< HEAD
+      run: yarn build
+
+  PublishToNetlify:
+    #if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/deployment'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+=======
+      run: npm run build
+
+  PublishToNetlify:
+
+    # TODO: Uncomment when done
+    # if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/deployment'
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+>>>>>>> deployment
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+<<<<<<< HEAD
+      - run: yarn install
+      - run: yarn run build --if-present
+        env:
+          CI: false
+=======
+
+      - run: npm install
+      - run: npm run build --if-present
+        env:
+          CI: false
+
+>>>>>>> deployment
+      - name: Deploy to netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=build --prod
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'

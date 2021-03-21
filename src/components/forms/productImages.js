@@ -1,65 +1,70 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import './productImages.css'
-import PhotoLoader from "../photoLoader/photoLoader"
-const ProductImages = ({ description, photos }) => {
-    const history = useHistory();
-    const [visibleForm, setVisibleForm] = useState("first")
-    const handlevisibleForm = () => {
-        setVisibleForm("second")
-    }
-    //formData : combo for the inputs
-    const [formData, setFormData] = useState({
-        description: undefined,
-        photos: []
+import React, {useState} from 'react';
+import pablo from "../../assets/pablo.png";
+import PhotoLoader from '../photoLoader/photoLoader'; 
+const ProductImages = ({ productCreated }) => {
+    console.log(productCreated)
+     /*//////////////////////////////////*/
+    const [descData, setDescData] = useState({
+        description: undefined
     });
-    console.log(formData)
-    const body = {
-        description: formData.description,
-        photos: formData.photos
-    }
-    console.log(body);
-    //Fetch function
-    const handleCreate = () => {
+    //Body: conforms the key/values to be send to MongoDB
+    const secondbody = {
+        description: descData.description,
+        //  id: productId
+    };
+    //añadir fetch de imagenes y de descripcion
+    const updateDescription = () => {
         const options = {
-            method: "POST",
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(body),
-        }
+            body: JSON.stringify(secondbody),
+        };
+        fetch(`http://localhost:5000/api/products/${productCreated._id}`, options)
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .then(json => setDescData(json.productId))
+        //console.log("Product: " . $productId);
     }
+    const [photoArray, setPhotoArray] = useState([]);
+    //Body: conforms the key/values to be send to MongoDB
+    const photoLoad = {
+        photoArray: photoArray
+    };
     return (
-        <div>
+        <div className="main_form_container">
             <div className="form_container">
-                <div>
-                    <div className="form_title1">
-                        <h1><b>Sell your product with Reuz</b></h1>
-                    </div>
-                    <div className="form_title2">
-                        <h2>Description</h2>
-                    </div>
-                    <form >
-                        <div className="form_body">
-                            <textarea
-                                name="undefined"
-                                placeholder="Message"
-                                className="form_full_input1"
-                                type="text"
-                                onChange={(e) =>
-                                    setFormData({ ...formData, name: e.target.value })
-                                }
-                            ></textarea>
-                            <div className="form_title2">
-                                <h2>Pictures</h2>
-                            </div>
-                            <PhotoLoader/>
-                            <button className="button_a" onClick={handleCreate} >
-                                <h1 className="button_content">Create Listing</h1>
-                            </button>
-                        </div>
-                    </form>
+                <div className="form_title1">
+                    <h1><b>Sell your product with Reuz</b></h1>
                 </div>
+                <div className="form_title2">
+                    <h2>Description</h2>
+                </div>
+                <form >
+                    <div className="form_body">
+                        <textarea
+                            placeholder="Short description of your product"
+                            className="form_full_input1"
+                            rows="8"
+                            type="text"
+                            onChange={(e) =>
+                                setDescData({ ...descData, description: e.target.value })
+                            }
+                        />
+                        <div className="form_title2">
+                            <h2>Pictures</h2>
+                        </div>
+                        <PhotoLoader productId={productCreated._id} 
+                         />
+                        <button className="button_a" onClick={updateDescription}>
+                            <h1 className="button_content">Create Listing</h1>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div className="box_pablito">
+                <img src={pablo} alt="pablo" className="pablito" />
             </div>
         </div>
     )
