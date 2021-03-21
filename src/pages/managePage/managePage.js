@@ -3,9 +3,16 @@ import SideBar from "../../components/sideBar/sideBar";
 import ShowMore from "../../components/showMore/showMore";
 import ProductList from "../../components/productList/productList";
 import Button from "../../components/button/Button";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const ManagePage = ({ user }) => {
+
+    const history = useHistory();
+
+    const goToUploadProduct = () => {
+        history.push('/uploadProduct')
+    }
+
     return (
         <div className="manager__container">
             <SideBar className="sidebar__container" />
@@ -16,7 +23,7 @@ const ManagePage = ({ user }) => {
                         <Link className="create">Edit and create listings</Link>
                     </div>
                     <div className="elementsArea__button">
-                        <Button name="Create listing" />
+                        <Button name="Create listing" onClick={goToUploadProduct} />
                     </div>
                 </div>
                 <div className="products__container">

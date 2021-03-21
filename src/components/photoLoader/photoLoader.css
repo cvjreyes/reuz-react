@@ -1,0 +1,88 @@
+.photoloader__container {
+    width: 128px;
+    height: 128px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px 10px 10px;
+    #margin-bottom: 38px;
+}
+.photoloader__photouploaded {
+    width: 128px;
+    height: 128px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    object-fit: cover;
+    z-index: 2;
+}
+.photoloader__photouploaded__container{
+    width: 128px;
+    height: 128px;
+    border-radius: 0px;
+    margin-bottom: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.photoloader__photouploaded__container:hover .deleteIcon2{
+    float: left;
+    display: block;
+}
+.deleteIcon2{
+    height: 100%;
+    width: 100%;
+    top: 40%;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 40%;
+    z-index: 3;
+    cursor: pointer;
+}
+.deleteIcon2:hover{
+    background-color: white;
+    opacity: 70%;
+    z-index: 3;
+    cursor: pointer;
+}
+.deleteButton{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    bottom: 170px;
+    left: 109px;
+    z-index: 20;
+}
+input#photos-input{
+    display: none;
+}
+.labelPhotos-input#labelPhotos-input{
+   width: 128px;
+   height: 128px;
+    
+    opacity: 100%;
+    padding: 12px 12px 12px 12px !important;
+    border-radius: 5px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black !important;
+    color: white !important;
+}
+.labelPhotos-input#labelPhotos-input:hover{
+    opacity: 100%;
+    background-color: white !important;
+}
+.form__container_of_photoloader{
+    padding: 25px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

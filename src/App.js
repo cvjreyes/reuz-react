@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-
 /* Pages */
 import Home from "./pages/home/home";
 import Products from "./pages/products/products";
@@ -13,9 +12,10 @@ import ManagePage from "./pages/managePage/managePage";
 /* Components */
 import NavBar from "./components/navBar/navBar";
 import Footer from "./components/footer/footer";
-import Modal from "./components/modal/Modal"
-import SignupForm from "./components/forms/SignupForm"
-import LoginForm from "./components/forms/LoginForm"
+import Modal from "./components/modal/Modal";
+import SignupForm from "./components/forms/SignupForm";
+import LoginForm from "./components/forms/LoginForm";
+import UploadProduct from "./pages/formProduct/uploadProduct";
 
 
 function App() {
@@ -97,6 +97,9 @@ function App() {
           </Route>
           <Route exact path="/yourListings">
             <ManagePage user={loggedUser} />
+          </Route>
+          <Route exact path="/uploadProduct">
+            <UploadProduct user={loggedUser} />
           </Route>
         </Switch>
         <Footer />
