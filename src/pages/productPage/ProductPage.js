@@ -142,35 +142,35 @@ const ProductPage = ({ user }) => {
                         <div className="productPage_images_firstImage">
                             <img
                                 src={productInfo.urlImage}
-                                alt="product display"
+                                alt="image unavailable"
                                 onClick={handleImageModal}
                             />
                         </div>
                         <div className="productPage_images_otherImages_up">
                             <img
                                 src={productInfo.urlImage}
-                                alt="product display"
+                                alt="image unavailable"
                                 onClick={handleImageModal}
                             />
                         </div>
                         <div className="productPage_images_otherImages_down">
                             <img
                                 src={productInfo.urlImage}
-                                alt="product display"
+                                alt="image unavailable"
                                 onClick={handleImageModal}
                             />
                         </div>
                         <div className="productPage_images_otherImages_up">
                             <img
                                 src={productInfo.urlImage}
-                                alt="product display"
+                                alt="image unavailable"
                                 onClick={handleImageModal}
                             />
                         </div>
                         <div className="productPage_images_otherImages_down">
                             <img
                                 src={productInfo.urlImage}
-                                alt="product display"
+                                alt="image unavailable"
                                 onClick={handleImageModal}
                             />
                         </div>
@@ -218,7 +218,7 @@ const ProductPage = ({ user }) => {
                             <div className="productPage_images_modalImage">
                                 <img
                                     src={productInfo.urlImage}
-                                    alt="product display"
+                                    alt="image unavailable"
                                     onClick={handleImageModal}
                                 />
                             </div>

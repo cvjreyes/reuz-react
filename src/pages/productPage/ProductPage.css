@@ -23,7 +23,6 @@
     display: flex;
     cursor:pointer;
     object-fit: cover;
-
 }
 
 .productPage_images_otherImages_up {
@@ -53,6 +52,7 @@
     left: 0;
     width: 100%;
     object-fit: cover;
+    background-color: #dadada;
 }
 
 .productPage_images_modalImage {
