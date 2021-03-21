@@ -55,10 +55,12 @@ const ProductPage = ({ user }) => {
                 .then((response) => response.json())
                 .then((json) => {
                     console.log(json)
-                    const results = json.results[0].geometry
-                    const geolocatedAdress = [results.lat, results.lng]
-                    setProductPosition(geolocatedAdress);
-                    console.log(geolocatedAdress)
+                    if(json.results[0] != undefined ){
+                        const results = json.results[0].geometry
+                        const geolocatedAdress = [results.lat, results.lng]
+                        setProductPosition(geolocatedAdress);
+                        console.log(geolocatedAdress)
+                    };
                 });
         }
 
