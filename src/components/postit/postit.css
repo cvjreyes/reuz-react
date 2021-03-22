@@ -2,57 +2,61 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  margin-left: 90px;
+  margin-left: 120px;
   padding: 30px;
   padding-top: 50px;
-  width: 350px;
-  height: 450px;
-  background: rgba(255, 255, 255, 0.397);
-  backdrop-filter: blur(31px);
+  margin-top: 50px;
+  width: 450px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(50px);
   top: 70px;
 }
 
-.postit__title h1 {
+.postit__title > h1 {
   justify-content: left;
   font-family: Raleway;
   font-style: normal;
-  font-weight: bold;
-  font-size: 45px;
-  color: #070606;
-  margin: -10.5px;
-  margin-top: -35px;
-  width: 300px;
+  line-height: 60px;
+  font-weight: 700;
+  font-size: 50px;
+  color: #3a3a3a;
   height: 140px;
+  margin-bottom: 30px;
   
 }
 
 .postit__description {
-  margin-top: 70px;
+  margin-top: 30px;
   font-family: Raleway;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   font-size: 20px;
   line-height: 150%;
-  color: #080707;
+  color: #686868;
 }
 
 .MyButton {
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  vertical-align: middle;
+  justify-content: center;
+  height: 80px;
   font-family: Raleway;
   font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
+  font-weight: 500;
+  font-size: 14px;
   line-height: 150%;
   text-align: center;
+  margin-top: 30px;
   background: #e89f71;
-  margin-top: 50px;
   border: none;
+  cursor: pointer;
 }
 
 .realButton {
-  font-family: Raleway;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 150%;
+  font-size: 18px;
   color: #ffffff;
 }

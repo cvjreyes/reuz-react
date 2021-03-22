@@ -1,28 +1,18 @@
+import React from 'react';
 import "./products.css";
-import NavBar from "../../components/navBar/navBar";
 import ProductSelection from "../../components/productSelection/productSelection";
 import ShowMore from "../../components/showMore/showMore";
-import Footer from "../../components/footer/footer";
 import DropDowns from "../../components/dropDowns/dropDowns";
-//import Demo from "../../components/dropDonws/rangeSlider"
 
 
 
-export const Products = () => {
+export const Products = ({products, setProducts}) => {
+
     return (
-        <div>
-            <div className="navbar__container">
-            <NavBar />
-                <div className="dropDowns-container">
-                    <DropDowns /> 
-                    
-                </div>
-            </div>
-
-            <ProductSelection className="productos__container"/>
+        <>
+            <DropDowns products={products} setProducts={setProducts} />
             <ShowMore />
-            <Footer />
-        </div>
+        </>
     )
 }
- export default Products;
+export default Products;

@@ -3,34 +3,43 @@ import { useEffect, useState } from "react";
 import "./productList.css";
 import ProductCard from "../productCard/productCard"
 
-const ProductList = () => {
+const ProductList = ({ user }) => {
   const [products, setProducts] = useState(null);
+  console.log(products);
+  const userId = user._id;
   useEffect(() => {
-      fetch("http://localhost:5000/api/users/5fda64ec381302d9f3a7438a/products", {
-        "method": "GET",
-        "headers": {
-            "Content-Type": "application/json"
-          }
-      })
-      .then ((response) => response.json())
-      .then ((json) => {
-          console.log(json);
-          setProducts(json);
+    fetch('http://localhost:5000/api/users/' + userId + '/products', {
+      "method": "GET",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setProducts(json);
       });
-  }, []);
-    return (
-        <div>
+  }, [userId]);
+
+  console.log(products)
+
+  return (
+    <div>
       <div className="productCard">
-        {products && products.map((product) => (
-          <ProductCard className="productCard"
-                    products={products}
-                    urlImage={product.urlImage} 
-                    name={product.name} 
-                    description={product.description}
-                    price={product.price}/>
-         ))}
+        {products != null &&
+          products.map((product) => (
+            <ProductCard className="productCard"
+              /* products={products[products.indexOf(product)]} */
+              productId={product._id}
+              urlImage={product.urlImage}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              discount={product.discount}
+            />
+          ))}
       </div>
     </div>
-  ); 
+  );
 };
 export default ProductList;
