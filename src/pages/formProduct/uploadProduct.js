@@ -1,6 +1,4 @@
-import React, {
-    useState
-} from 'react';
+import React, { useState} from 'react';
 import ProductDetails from "../../components/forms/productDetails";
 import ProductImages from "../../components/forms/productImages";
 import "./uploadProduct.css";
