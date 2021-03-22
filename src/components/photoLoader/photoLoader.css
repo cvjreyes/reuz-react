@@ -8,8 +8,16 @@
     align-items: center;
     justify-content: center;
     margin: 10px 10px 10px 10px;
-    #margin-bottom: 38px;
+    margin-bottom: 38px;
 }
+
+.photoLoader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
 .photoloader__photouploaded {
     width: 128px;
     height: 128px;
@@ -21,7 +29,8 @@
     object-fit: cover;
     z-index: 2;
 }
-.photoloader__photouploaded__container{
+
+.photoloader__photouploaded__container {
     width: 128px;
     height: 128px;
     border-radius: 0px;
@@ -30,11 +39,13 @@
     flex-direction: column;
     align-items: center;
 }
-.photoloader__photouploaded__container:hover .deleteIcon2{
+
+.photoloader__photouploaded__container:hover .deleteIcon2 {
     float: left;
     display: block;
 }
-.deleteIcon2{
+
+.deleteIcon2 {
     height: 100%;
     width: 100%;
     top: 40%;
@@ -44,13 +55,15 @@
     z-index: 3;
     cursor: pointer;
 }
-.deleteIcon2:hover{
+
+.deleteIcon2:hover {
     background-color: white;
     opacity: 70%;
     z-index: 3;
     cursor: pointer;
 }
-.deleteButton{
+
+.deleteButton {
     height: 40px;
     width: 40px;
     position: relative;
@@ -58,13 +71,14 @@
     left: 109px;
     z-index: 20;
 }
-input#photos-input{
+
+input#photos-input {
     display: none;
 }
-.labelPhotos-input#labelPhotos-input{
-   width: 128px;
-   height: 128px;
-    
+
+.labelPhotos-input#labelPhotos-input {
+    width: 128px;
+    height: 128px;
     opacity: 100%;
     padding: 12px 12px 12px 12px !important;
     border-radius: 5px !important;
@@ -75,11 +89,13 @@ input#photos-input{
     background-color: black !important;
     color: white !important;
 }
-.labelPhotos-input#labelPhotos-input:hover{
+
+.labelPhotos-input#labelPhotos-input:hover {
     opacity: 100%;
     background-color: white !important;
 }
-.form__container_of_photoloader{
+
+.form__container_of_photoloader {
     padding: 25px;
     width: 100%;
     display: flex;
